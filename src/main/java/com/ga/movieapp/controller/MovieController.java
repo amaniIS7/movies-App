@@ -22,8 +22,8 @@ public class MovieController {
 		mv.setViewName("movie/add");
 		
 		
-//		HomeController hc = new HomeController();
-//		hc.setAppName(mv, env);
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
 		
 		
 		return mv;
