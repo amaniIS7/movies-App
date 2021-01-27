@@ -10,7 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity 
 @Table(name="Actor")
-public class actor {
+public class Actor {
 	
 	@Id
 	@GeneratedValue
