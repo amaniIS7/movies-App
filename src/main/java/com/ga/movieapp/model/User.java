@@ -30,8 +30,8 @@ public class User {
 	
 	
 	
-	@OneToMany(mappedBy="user")
-	private Set<Review> reviews;
+//	@OneToMany(mappedBy="user")
+//	private Set<Review> reviews;
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
