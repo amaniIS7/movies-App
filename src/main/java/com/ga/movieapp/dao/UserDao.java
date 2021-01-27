@@ -8,3 +8,7 @@ import com.ga.movieapp.model.User;
 public interface UserDao extends CrudRepository<User, Integer> {
 	public User findByEmailAddress(String emailAddress);
 }
+<<<<<<< HEAD:src/main/java/com/ga/movieapp/dao/UserDao.java
+
+=======
+>>>>>>> master:src/main/java/com/ga/movieapp/dao/userDao.java
