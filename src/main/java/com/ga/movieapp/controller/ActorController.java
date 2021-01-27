@@ -17,10 +17,10 @@ import com.ga.movieapp.model.Actor;
 public class ActorController {
 
 	//CRUD OPERATIONS
-		// C -> Create = Done
-		// R -> Select = Done
-		// U -> Update = Done
-		// D -> Delete = Done
+		// C -> Create = 
+		// R -> Select = 
+		// U -> Update = 
+		// D -> Delete = 
 
 
 		@Autowired

@@ -21,10 +21,10 @@
 		<a href="${appName}">Home</a> <a href="${appName}movie/add">Add
 			movie</a> <a href="${appName}movie/index">movie</a>
 
-		<div style="text-align: right; float: right;">
+<%-- 		<div style="text-align: right; float: right;">
 			<a href="${appName}user/login">Login</a> <a
 				href="${appName}user/registration">Create New Account</a>
-		</div>
+		</div> --%>
 
 	</div>
 
