@@ -1,6 +1,6 @@
 <jsp:include page="../shared/_layout.jsp" />
 
-<form action="${appName}/movie/add" method="post">
+<form action="${appName}movie/add" method="post">
 
 	<div>
 		<label>Movie's Name </label> 
