@@ -2,6 +2,8 @@ package com.ga.movieapp.model;
 
 
 import java.time.LocalDateTime;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
@@ -28,8 +30,8 @@ public class User {
 	
 	
 	
-//	@OneToMany(mappedBy="user")
-//	private Sat<Review> reviews;
+	@OneToMany(mappedBy="user")
+	private Set<Review> reviews;
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
