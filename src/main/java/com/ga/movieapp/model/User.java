@@ -1,15 +1,16 @@
 package com.ga.movieapp.model;
 
-import java.time.LocalDateTime;
 
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+// user model 
 
 @Entity 
 @Table(name="user")
