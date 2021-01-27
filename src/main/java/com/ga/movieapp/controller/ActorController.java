@@ -8,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ga.movieapp.dao.ActorDao;
+import com.ga.movieapp.dao.MovieDao;
+import com.ga.movieapp.model.Actor;
+
 
 @Controller
 public class ActorController {
@@ -17,22 +21,42 @@ public class ActorController {
 		// R -> Select = Done
 		// U -> Update = Done
 		// D -> Delete = Done
-		
-		
+
+
 		@Autowired
 		private Environment env;
 		
+		@Autowired
+		private MovieDao moviedao;
+		
+		@Autowired 
+		private ActorDao dao;
+
+
+
+		//Add actor  - get request
+		@GetMapping("/actor/add")
+		public ModelAndView addActor() {
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("actor/add");
+			
+			HomeContorller hc = new HomeContorller();
+			hc.setAppName(mv, env);
+			
+			var it = moviedao.findAll();
+			mv.addObject("movie", it);
+			
+			return mv; 
+		}
+		
+		//Add actor - post request
+		public String addActor(Actor actor) {
+			dao.save(actor);
+			return "redirect:/actor/index";
+		}
 		
 		
-//		//Add actor 
-//		@GetMapping("/actor/add")
-//		public ModelAndView addActor() {
-//			ModelAndView mv = new ModelAndView();
-//			mv.setViewName("actor/add");
-//			
-//		}
 		
-		
+
+
 }
-
-
