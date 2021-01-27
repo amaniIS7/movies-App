@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class ActorController {
+public class actorController {
 
 	//CRUD OPERATIONS
 		// C -> Create = Done
