@@ -7,4 +7,5 @@ import com.ga.movieapp.model.User;
 
 public interface UserDao extends CrudRepository<User, Integer> {
 	public User findByEmailAddress(String emailAddress);
-} 
+}
+
