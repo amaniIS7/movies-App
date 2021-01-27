@@ -40,7 +40,7 @@ public class ActorController {
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("actor/add");
 			
-			HomeContorller hc = new HomeContorller();
+			HomeController hc = new HomeController();
 			hc.setAppName(mv, env);
 			
 			var it = moviedao.findAll();
