@@ -35,10 +35,10 @@ public class MovieController {
 	
 	// HTTP POST REQUEST - Movie Add
 	@PostMapping("/movie/add")
-	public void addMovie(Movie movie) {
+	public String  addMovie(Movie movie) {
 		dao.save(movie);
 		
-//		return "redirect:/movie/index";
+		return "redirect:/movie/index";
 	}
 	
 
