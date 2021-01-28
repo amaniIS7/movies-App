@@ -91,9 +91,22 @@ public class ActorController {
 			return mv; 
 		}
 		
+		//edit actor
+		@GetMapping("/actor/edit")
+		public ModelAndView editActor(@RequestParam int id) {
+			Actor actor = dao.findById(id);
+			
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("actor/edit");
+			mv.addObject("actor", actor);
+			
+			HomeController hc = new HomeController();
+			hc.setAppName(mv, env);
+			
+			return mv; 
+		}
 		
+		// delete actor
 		
-		
-
 
 }
