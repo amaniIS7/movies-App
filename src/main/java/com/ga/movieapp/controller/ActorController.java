@@ -75,7 +75,7 @@ public class ActorController {
 		}
 		
 		// detail actor - get request 
-		@GetMapping("/actor/deteil")
+		@GetMapping("/actor/detail")
 		public ModelAndView actorDetails(@RequestParam int id ) {
 			System.out.println(id);
 			
