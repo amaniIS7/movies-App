@@ -1,12 +1,12 @@
 package com.ga.movieapp.model;
 
+
 import java.util.*;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 
 public class UserDetailsImpl implements UserDetails{
 	
@@ -17,7 +17,7 @@ public class UserDetailsImpl implements UserDetails{
 	// Constructor
 	public UserDetailsImpl(User user) {
 		// TODO Auto-generated constructor stub
-		this.username = user.getEmailAddress();
+		this.username = user.getUserName();
 		this.password = user.getPassword();
 		this.authorities = Arrays.stream(user.getRoleUser().split(","))
 								.map(SimpleGrantedAuthority::new)

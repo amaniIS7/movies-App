@@ -1,9 +1,12 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <jsp:include page="../shared/_layout.jsp"></jsp:include>
 
 <b>${message}</b>
 <br>
 
-<form action="${appName}user/login" method="post">
+<form action="${appName}login" method="post">
 
 	<div class="form-group">
 	<label> User Name  </label>
