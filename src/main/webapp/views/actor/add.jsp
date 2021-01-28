@@ -3,4 +3,5 @@
 <div>
 <label>Actor's Name</label><input type="text">
 </div>
+<button type="submit">Submit</button>
 </form>

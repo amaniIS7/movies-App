@@ -22,8 +22,8 @@
 		<a href="${appName}movie/add">Add movie</a>
 		<a href="${appName}movie/index">movie</a>
 		
-<%-- 		<a href="${appName}actor/add">Add actor</a>
-		<a href="${appName}actor/index">actor</a> --%>
+	<a href="${appName}actor/add">Add actor</a>
+		<a href="${appName}actor/index">actor</a> 
 		
 		<%-- 		<div style="text-align: right; float: right;">
 			<a href="${appName}user/login">Login</a> <a
