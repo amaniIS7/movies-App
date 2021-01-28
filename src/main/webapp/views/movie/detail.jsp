@@ -1,12 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="../shared/_layout.jsp" />
 
-</body>
-</html>
+Movie's Name: ${movie.name}
+<br>
+Movie's Description: ${movie.description}
+<br>
+Movie Date : ${movie.movieDate}
+<br>
+<br>
+
+<div>Cast of the Movie</div>
+
+<%-- <c:forEach items="${movie.getActors()}" var="actor">
+	<div>${actor.name}</div>
+
+	<hr>
+</c:forEach> --%>

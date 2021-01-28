@@ -81,4 +81,23 @@ public class MovieController {
 		return "redirect:/movie/index";
 	}
 
+	// HTTP GET REQUEST - Movie Detail
+	@GetMapping("/movie/detail")
+	public ModelAndView movieDetails(@RequestParam int id) {
+		System.out.println(id);
+		
+		Movie movie = dao.findById(id);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("movie/detail");
+		mv.addObject("movie", movie);
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		return mv;
+		
+	}
+
+
 }

@@ -37,9 +37,7 @@ public class ActorController {
 		@Autowired 
 		private ActorDao dao;
 
-		@Autowired
-		HttpServletRequest request;
-
+		
 		//Add actor  - get request
 		@GetMapping("/actor/add")
 		public ModelAndView addActor() {
@@ -113,9 +111,7 @@ public class ActorController {
 		//Delete actor
 		@GetMapping("/actor/delete")
 		public String deleteActor(@RequestParam int id) {
-			
-			HttpSession session = request.getSession();
-			
+						
 			dao.deleteById(id);
 			return "redirect:/actor/index";
 		}
