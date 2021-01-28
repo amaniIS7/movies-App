@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,13 +45,14 @@ public class ActorController {
 			HomeController hc = new HomeController();
 			hc.setAppName(mv, env);
 			
-			var it = moviedao.findAll();
-			mv.addObject("movie", it);
+//			var it = moviedao.findAll();
+//			mv.addObject("movie", it);
 			
 			return mv; 
 		}
 		
 		//Add actor - post request
+		@PostMapping("/actor/add")
 		public String addActor(Actor actor) {
 			dao.save(actor);
 			
