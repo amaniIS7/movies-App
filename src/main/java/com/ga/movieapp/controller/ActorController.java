@@ -62,11 +62,11 @@ public class ActorController {
 		// index actor - get request 
 		@GetMapping("/actor/index")
 		public ModelAndView getActor() {
-			var it = dao.findAll();
+			var actor = dao.findAll();
 			
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("actor/index");
-			mv.addObject("actor", it);
+			mv.addObject("actors", actor);
 			
 			HomeController hc =new HomeController();
 			hc.setAppName(mv, env);
