@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.movieapp.dao.ActorDao;
@@ -17,10 +18,10 @@ import com.ga.movieapp.model.Actor;
 public class ActorController {
 
 	//CRUD OPERATIONS
-		// C -> Create = Done
-		// R -> Select = Done
-		// U -> Update = Done
-		// D -> Delete = Done
+		// C -> Create = 
+		// R -> Select = 
+		// U -> Update = 
+		// D -> Delete = 
 
 
 		@Autowired
@@ -40,7 +41,7 @@ public class ActorController {
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("actor/add");
 			
-			HomeContorller hc = new HomeContorller();
+			HomeController hc = new HomeController();
 			hc.setAppName(mv, env);
 			
 			var it = moviedao.findAll();
@@ -52,8 +53,42 @@ public class ActorController {
 		//Add actor - post request
 		public String addActor(Actor actor) {
 			dao.save(actor);
+			
 			return "redirect:/actor/index";
 		}
+		
+		// index actor - get request 
+		@GetMapping("/actor/index")
+		public ModelAndView getActor() {
+			var it = dao.findAll();
+			
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("actor/index");
+			mv.addObject("actor", it);
+			
+			HomeController hc =new HomeController();
+			hc.setAppName(mv, env);
+			
+			return mv; 
+		}
+		
+		// detail actor - get request 
+		@GetMapping("/actor/deteil")
+		public ModelAndView actorDetails(@RequestParam int id ) {
+			System.out.println(id);
+			
+			Actor actor = dao.findById(id);
+			
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("actor/detail");
+			mv.addObject("actor",actor);
+			
+			HomeController hc =new HomeController();
+			hc.setAppName(mv, env);
+			
+			return mv; 
+		}
+		
 		
 		
 		

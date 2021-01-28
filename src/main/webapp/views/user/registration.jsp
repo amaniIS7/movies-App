@@ -1,4 +1,4 @@
-<jsp:include page="../shared/_layout.jsp" />
+<%-- <jsp:include page="../shared/_layout.jsp" />
 
 
 <form action="${appName}user/registration" method="post">
@@ -32,7 +32,7 @@
 	</div>
 	
 	<br>
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	
 	<button type="submit" class="btn btn-primary">Submit</button>
 
-</form>
+</form> --%>

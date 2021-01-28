@@ -18,13 +18,17 @@
 	<div class="heavy">
 		<h2>${Welcome}</h2>
 
-		<a href="${appName}">Home</a> <a href="${appName}movie/add">Add
-			movie</a> <a href="${appName}movie/index">movie</a>
-
-		<div style="text-align: right; float: right;">
+		<a href="${appName}">Home</a> 
+		<a href="${appName}movie/add">Add movie</a>
+		<a href="${appName}movie/index">movie</a>
+		
+	<a href="${appName}actor/add">Add actor</a>
+		<a href="${appName}actor/index">actor</a> 
+		
+		<%-- 		<div style="text-align: right; float: right;">
 			<a href="${appName}user/login">Login</a> <a
 				href="${appName}user/registration">Create New Account</a>
-		</div>
+		</div> --%>
 
 	</div>
 
