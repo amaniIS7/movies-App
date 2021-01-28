@@ -5,6 +5,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.movieapp.dao.MovieDao;
@@ -41,6 +42,43 @@ public class MovieController {
 		return "redirect:/movie/index";
 	}
 	
+	// HTTP GET REQUEST - Movie Index
+	@GetMapping("/movie/index")
+	public ModelAndView getMovie() {
+		var it = dao.findAll();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("movie/index");
+		mv.addObject("movies", it);
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		return mv;
+	}
 
+	// HTTP GET REQUEST - Movie Edit
+	@GetMapping("/movie/edit")
+	public ModelAndView editMovie(@RequestParam int id) {
+		Movie movie = dao.findById(id);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("movie/edit");
+		mv.addObject("movie", movie);
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		
+		return mv;
+	}
+	
+	// HTTP GET REQUEST - Movie Delete
+	@GetMapping("/movie/delete")
+	public String deleteMovie(@RequestParam int id) {
+
+		dao.deleteById(id);
+		return "redirect:/movie/index";
+	}
 
 }
