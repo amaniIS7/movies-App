@@ -5,10 +5,10 @@
 
      <div>
         <label>Actor's Name</label>
-        <input type="text" name="actor_name" value="${actor.actor_name}">
+        <input type="text" name="name" value="${actor.name}">
      </div>
 
-     <input  name="id" type="hidden" value="${actor.actor_Id}">
+     <input  name="id" type="hidden" value="${actor.id}">
      <button type="submit">Submit</button>
      
      

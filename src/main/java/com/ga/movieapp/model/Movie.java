@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -28,9 +30,14 @@ public class Movie {
 
 	private Date movieDate;
 
-
-	@ManyToMany(mappedBy = "movies")
+	@ManyToMany
+	@JoinTable(name = "movie_actor",
+	             joinColumns = {@JoinColumn(name = "actor_id")},
+	             inverseJoinColumns = {@JoinColumn (name = "movie_id")})
 	private Set<Actor> actors;
+
+//	@ManyToMany(mappedBy = "movies")
+//	private Set<Actor> actors;
 
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -95,6 +102,8 @@ public class Movie {
 	public void setActors(Set<Actor> actors) {
 		this.actors = actors;
 	}
+
+
 
 	
 }
