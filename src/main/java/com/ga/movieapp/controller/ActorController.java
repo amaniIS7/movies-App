@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import com.ga.movieapp.dao.ActorDao;
 import com.ga.movieapp.dao.MovieDao;
 import com.ga.movieapp.model.Actor;
@@ -107,7 +108,8 @@ public class ActorController {
 			HomeController hc = new HomeController();
 			hc.setAppName(mv, env);
 			
-			return mv; 
+			
+			return mv;
 		}
 		
 		//Delete actor
