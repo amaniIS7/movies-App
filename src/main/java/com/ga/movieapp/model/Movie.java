@@ -29,8 +29,8 @@ public class Movie {
 	private Date movieDate;
 
 
-//	@ManyToMany(mappedBy = "actor")
-//	private Set<Actor> actors;
+	@ManyToMany(mappedBy = "movies")
+	private Set<Actor> actors;
 
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -88,4 +88,13 @@ public class Movie {
 		this.updateAt = updateAt;
 	}
 
+	public Set<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(Set<Actor> actors) {
+		this.actors = actors;
+	}
+
+	
 }
