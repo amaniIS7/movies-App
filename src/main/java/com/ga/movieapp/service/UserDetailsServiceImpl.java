@@ -10,6 +10,8 @@ import com.ga.movieapp.dao.UserDao;
 import com.ga.movieapp.model.User;
 import com.ga.movieapp.model.UserDetailsImpl;
 
+
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -17,8 +19,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	UserDao dao;
 	
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException{
-		User user = dao.findByUserName(userName);
+	public UserDetails loadUserByUsername(String emailAddress) throws UsernameNotFoundException{
+		User user = dao.findByEmailAddress(emailAddress);
 		
 		if(user == null)
 			throw new UsernameNotFoundException("Not found");
@@ -26,6 +28,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		UserDetailsImpl obj = new UserDetailsImpl(user);
 		
 		return obj;
-	}
 
-}
+}}

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
-import com.ga.movieapp.model.User;
 import com.ga.movieapp.dao.UserDao;
+import com.ga.movieapp.model.User;
+
 
 @Controller
 public class UserController {
@@ -28,6 +28,7 @@ public class UserController {
 	HttpServletRequest request;
 	
 	// Routes 
+	
 	// To load the registration form
 	   @GetMapping("/user/registration")
 	   public ModelAndView registration() {
@@ -44,7 +45,6 @@ public class UserController {
 	// To post the registration form
 	 @PostMapping("/user/registration")
 	 public ModelAndView registration(User user) {
-		
 
 		 
 		 ModelAndView mv = new ModelAndView();
@@ -56,12 +56,9 @@ public class UserController {
 		 // Check to user is already registered or not
 		 
 		 var it = dao.findAll();
-		 System.out.println(it);
 		 
 		 for(User dbUser : it) {
-			 System.out.println(dbUser.getUserName());
-			 if(dbUser.getUserName().equals(user.getUserName())) {
-			
+			 if(dbUser.getEmailAddress().equals(user.getEmailAddress())) {
 				 mv.addObject("message", "User already exists");
 				 return mv;
 			 }
@@ -79,8 +76,8 @@ public class UserController {
 		 return mv;
 		 
 	 }
-	 
-		// To load the login form
+	
+	// To load the login form
 		@GetMapping("/login")
 		public ModelAndView login() {
 			ModelAndView mv = new ModelAndView();
@@ -91,26 +88,25 @@ public class UserController {
 			
 			return mv;
 		}
-//	
+	
 //	// To post the login form
 //	 @PostMapping("/user/login")
 //	 public String login(User user) {
 //		 
 //		 BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
 //		 
-//		 String userName = user.getUserName();
+//		 String emailAddress = user.getEmailAddress();
 //		 String password = user.getPassword();
 //		 
-//		 User matchedUser = dao.findByUserName(userName);
+//		 User matchedUser = dao.findByEmailAddress(emailAddress);
 //		 HttpSession session = request.getSession();
-//		 session.setAttribute("userName", password);
-//		 session.setAttribute("out", "user " + matchedUser.getPassword() );
+//
 //		 if(matchedUser != null) {
 //			 if(bCrypt.matches(password, matchedUser.getPassword())) {
-//				  session.setAttribute("in", "password error");
+//				 
 //				 // Session
 //				  session.setAttribute("user", matchedUser);
-//				  session.setAttribute("userRole", matchedUser.getRoleUser());
+//				  session.setAttribute("userRole", matchedUser.getUserRole());
 //				  
 //				  session.setAttribute("message", "you are logged in successfully");
 //				  
@@ -119,11 +115,11 @@ public class UserController {
 //			 }
 //		 }
 //		 
-//		 session.setAttribute("message", "emailAddress or password is incorrect");
+//		 session.setAttribute("message", "Username or password is incorrect");
 //		 return "redirect:/user/login";
 //	 }
-//		
-//		// To invalidate the current user session
+//	
+//	// To invalidate the current user session
 //	 @GetMapping("/user/logout")
 //	 public String logout() {
 //		 HttpSession session = request.getSession();
@@ -131,4 +127,22 @@ public class UserController {
 //		 
 //		 return "redirect:/user/login";
 //	 }
+//	
+//	// TO check the user is logged in or not
+//	 public boolean isUserLoggedIn() {
+//		 
+//		 HttpSession session = request.getSession();
+//		 if(session.getAttribute("user") == null) {
+//			 return false;
+//		 }
+//		 else
+//		 {
+//			 return true;
+//		 }
+//	 }
+//	 
+//	
+//	// Load user profile
+//	// @GetMapping("/user/profile")
+
 }

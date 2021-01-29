@@ -17,9 +17,9 @@ public class UserDetailsImpl implements UserDetails{
 	// Constructor
 	public UserDetailsImpl(User user) {
 		// TODO Auto-generated constructor stub
-		this.username = user.getUserName();
+		this.username = user.getEmailAddress();
 		this.password = user.getPassword();
-		this.authorities = Arrays.stream(user.getRoleUser().split(","))
+		this.authorities = Arrays.stream(user.getUserRole().split(","))
 								.map(SimpleGrantedAuthority::new)
 								.collect(Collectors.toList());
 	}
@@ -65,7 +65,11 @@ public class UserDetailsImpl implements UserDetails{
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
-	}}
+	}
+	
+	
+	
+	}
 	
 	
 	
