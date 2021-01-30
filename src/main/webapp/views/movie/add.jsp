@@ -18,11 +18,11 @@
 		<input type="date" name="movieDate">
 	</div>
 	
-	<div class ="form-group">
-		<label>actor</label>
-		<select name="actors" class="form-control" multiple="multiple">
-			<c:forEach items="${actors}" var="actor">
-				<option value="${actor.actor_Id}"> ${actor.actor_name} </option>
+	<div>
+		<label>Select Actors</label>
+		<select name="actors" multiple="multiple" class="form-control" >
+			<c:forEach items="${movie.getActors()}" var="actor">
+				<option value="${actor.id}"> ${actor.name} </option>
 			</c:forEach>	
 		</select>
 	</div>

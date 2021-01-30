@@ -14,8 +14,11 @@ public class Actor {
 	
 	@Id
 	@GeneratedValue
-	private int actor_Id;
-	private String actor_name;
+	private int id;
+	private String name;
+	
+	@ManyToMany(mappedBy = "actors")
+	private Set<Movie> movies;
 	
 //	@ManyToMany
 //	@JoinTable(name = "movie_actor",
@@ -30,45 +33,40 @@ public class Actor {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
-	public int getActor_Id() {
-		return actor_Id;
-	}
 	
-	public void setActor_Id(int actor_Id) {
-		this.actor_Id = actor_Id;
+	public int getId() {
+		return id;
 	}
-	
-	public String getActor_name() {
-		return actor_name;
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	public void setActor_name(String actor_name) {
-		this.actor_name = actor_name;
+	public String getName() {
+		return name;
 	}
-	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Set<Movie> getMovies() {
+		return movies;
+	}
+	public void setMovies(Set<Movie> movies) {
+		this.movies = movies;
+	}
 	public LocalDateTime getCreateAt() {
 		return createAt;
 	}
-	
 	public void setCreateAt(LocalDateTime createAt) {
 		this.createAt = createAt;
 	}
-	
 	public LocalDateTime getUpdateAt() {
 		return updateAt;
 	}
-	
 	public void setUpdateAt(LocalDateTime updateAt) {
 		this.updateAt = updateAt;
 	}
-
-//	public Set<Movie> getMovies() {
-//		return movies;
-//	}
-//
-//	public void setMovies(Set<Movie> movies) {
-//		this.movies = movies;
-//	}
+	
+	
+	
 	
 
 }
