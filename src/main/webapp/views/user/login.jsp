@@ -3,11 +3,11 @@
 <b>${message}</b>
 <br>
 
-<form action="${appName}user/login" method="post">
+<form action="${appName}login" method="post">
 
 	<div class="form-group">
-	<label> User Name  </label>
-	<input name="userName" type="text" class="form-control">
+	<label> Email Address </label>
+	<input name="username" type="email" class="form-control">
 	</div>
 	
 	<div class="form-group">

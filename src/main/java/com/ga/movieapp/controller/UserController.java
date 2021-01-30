@@ -1,7 +1,7 @@
 package com.ga.movieapp.controller;
 
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
-import com.ga.movieapp.model.User;
 import com.ga.movieapp.dao.UserDao;
+import com.ga.movieapp.model.User;
+
 
 @Controller
 public class UserController {
@@ -141,5 +141,8 @@ public class UserController {
 //		 }
 //	 }
 //	 
-			
+//	
+//	// Load user profile
+//	// @GetMapping("/user/profile")
+
 }
