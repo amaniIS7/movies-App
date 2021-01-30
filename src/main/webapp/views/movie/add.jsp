@@ -4,30 +4,29 @@
 <form action="${appName}movie/add" method="post">
 
 	<div>
-		<label>Movie's Name </label> 
-		<input type="text" name="name">
+		<label>Movie's Name </label> <input type="text" name="name">
 	</div>
 
 	<div>
-		<label>Description about the movie </label> 
-		<input type="text" name="description">
+		<label>Description about the movie </label> <input type="text"
+			name="description">
 	</div>
 
 	<div>
-		<label>Date of Movie </label> 
-		<input type="date" name="movieDate">
+		<label>Date of Movie </label> <input type="date" name="movieDate">
 	</div>
-	
-	<div>
+
+	<%-- 	<div>
 		<label>Select Actors</label>
 		<select name="actors" multiple="multiple" class="form-control" >
 			<c:forEach items="${movie.getActors()}" var="actor">
 				<option value="${actor.id}"> ${actor.name} </option>
 			</c:forEach>	
 		</select>
-	</div>
+	</div> --%>
 
-
+	<input type="hidden" name="${_csrf.parameterName}"
+		value="${_csrf.token}" />
 	<button type="submit">Submit</button>
 
 </form>

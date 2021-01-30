@@ -21,6 +21,7 @@ public class ActorController {
 		@Autowired 
 		private ActorDao dao;
 
+		
 		//Add actor  - get request
 		@GetMapping("/actor/add")
 		public ModelAndView addActor() {

@@ -19,7 +19,7 @@
 		<input type="date" name="movieDate" value="${movie.movieDate}">
 	</div>
 
-	
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<input name="id" type="hidden" value="${movie.id}">
 	<button type="submit">Submit</button>
 

@@ -65,8 +65,4 @@ public class Actor {
 		this.updateAt = updateAt;
 	}
 	
-	
-	
-	
-
 }
