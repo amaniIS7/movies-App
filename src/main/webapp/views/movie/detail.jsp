@@ -16,3 +16,4 @@ Movie Date : ${movie.movieDate}
 
 	<hr>
 </c:forEach> 
+

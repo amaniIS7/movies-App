@@ -2,7 +2,6 @@ package com.ga.movieapp.controller;
 
 
 
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -22,9 +21,7 @@ public class ActorController {
 		@Autowired 
 		private ActorDao dao;
 
-		@Autowired
-		HttpServletRequest request;
-
+		
 		//Add actor  - get request
 		@GetMapping("/actor/add")
 		public ModelAndView addActor() {
@@ -99,8 +96,7 @@ public class ActorController {
 		//Delete actor
 		@GetMapping("/actor/delete")
 		public String deleteActor(@RequestParam int id) {
-			
-			
+
 			dao.deleteById(id);
 			return "redirect:/actor/index";
 		}
