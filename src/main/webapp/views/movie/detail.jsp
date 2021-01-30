@@ -11,8 +11,9 @@ Movie Date : ${movie.movieDate}
 
 <div>Cast of the Movie</div>
 
-<%-- <c:forEach items="${movie.getActors()}" var="actor">
+<c:forEach items="${movie.getActors()}" var="actor">
 	<div>${actor.name}</div>
 
 	<hr>
-</c:forEach> --%>
+</c:forEach> 
+

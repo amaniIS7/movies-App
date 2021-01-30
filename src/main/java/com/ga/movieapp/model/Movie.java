@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -28,8 +30,13 @@ public class Movie {
 
 	private Date movieDate;
 
+	@ManyToMany
+	@JoinTable(name = "movie_actor",
+	             joinColumns = {@JoinColumn(name = "movie_id")},
+	             inverseJoinColumns = {@JoinColumn (name = "actor_id")})
+	private Set<Actor> actors;
 
-//	@ManyToMany(mappedBy = "actor")
+//	@ManyToMany(mappedBy = "movies")
 //	private Set<Actor> actors;
 
 	@Column(name = "createdAt", nullable = false, updatable = false)
@@ -88,4 +95,15 @@ public class Movie {
 		this.updateAt = updateAt;
 	}
 
+	public Set<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(Set<Actor> actors) {
+		this.actors = actors;
+	}
+
+
+
+	
 }

@@ -7,9 +7,9 @@
 </tr>
 <c:forEach items="${actors}" var="actor">
 <tr>
-<td><a href="${appName}actor/detail?id=${actor.actor_Id}">${actor.actor_name}</a></td>
-<td><a href="${appName}actor/edit?id=${actor.actor_Id}">Edit</a>
-| <a href="${appName}actor/delete?id=${actor.actor_Id}">Delete</a>
+<td><a href="${appName}actor/detail?id=${actor.id}">${actor.name}</a></td>
+<td><a href="${appName}actor/edit?id=${actor.id}">Edit</a>
+| <a href="${appName}actor/delete?id=${actor.id}">Delete</a>
 </td>
 </tr>
 </c:forEach>

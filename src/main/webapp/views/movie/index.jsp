@@ -17,4 +17,5 @@
 			<td><a href="${appName}movie/delete?id=${movie.id}">Delete</a></td>
 		</tr>
 	</c:forEach>
+
 </table>
