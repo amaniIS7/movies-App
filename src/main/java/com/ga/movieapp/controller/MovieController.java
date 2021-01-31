@@ -75,8 +75,8 @@ public class MovieController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
-		var it = actordao.findAll();
-		mv.addObject("actors", it);
+//		var it = actordao.findAll();
+//		mv.addObject("actors", it);
 		
 		
 		return mv;

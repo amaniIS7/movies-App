@@ -2,6 +2,9 @@ package com.ga.movieapp.controller;
 
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -20,6 +23,8 @@ public class ActorController {
 		private Environment env;
 		@Autowired 
 		private ActorDao dao;
+//		@Autowired
+//		HttpServletRequest request;
 
 		
 		//Add actor  - get request
@@ -39,8 +44,15 @@ public class ActorController {
 		@PostMapping("/actor/add")
 		public String addActor(Actor actor) {
 			dao.save(actor);
-			
+//			
+//			HttpSession session = request.getSession();
+//			if (!actor.getName().equals("")) {
+//				session.setAttribute("message", "your adding successfully");
+//				return "redirect:/actor/index";
+//			}else {
+//				session.setAttribute("message", "your adding not successfully");
 			return "redirect:/actor/index";
+//			}
 		}
 		
 		// index actor - get request 
