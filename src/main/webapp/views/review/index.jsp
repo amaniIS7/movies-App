@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="../shared/_layout.jsp" />
+<div>Movie Reviews</div>
 <table>
+	<td>reviews</td>
+	<td>rating</td>
 
 	<c:forEach items="${reviews}" var="review">
 		<tr>

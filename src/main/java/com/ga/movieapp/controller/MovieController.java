@@ -2,13 +2,13 @@ package com.ga.movieapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ga.movieapp.dao.ActorDao;
 import com.ga.movieapp.dao.MovieDao;
 import com.ga.movieapp.model.Movie;
 
@@ -17,6 +17,9 @@ public class MovieController {
 
 	@Autowired 
 	private Environment env;
+	
+	@Autowired
+	private ActorDao actordao;
 
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
@@ -28,6 +31,8 @@ public class MovieController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 
+		var it = actordao.findAll();
+		mv.addObject("actors", it);
 		
 		return mv;
 	}
@@ -69,6 +74,9 @@ public class MovieController {
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
+		
+//		var it = actordao.findAll();
+//		mv.addObject("actors", it);
 		
 		
 		return mv;

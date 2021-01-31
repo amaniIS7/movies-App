@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.movieapp.dao.ReviewDao;
+import com.ga.movieapp.model.Movie;
 import com.ga.movieapp.model.Review;
 
 @Controller
@@ -36,10 +37,15 @@ public class ReviewController {
 	
 	// HTTP POST REQUEST - Review Add
 	@PostMapping("/review/add")
-	public String  addReview(Review review) {
+	public String addReview(Review review) {
 		dao.save(review);
 		
-		return "redirect:/review/index";
+//		int id = review.getMovie().getId();
+		Movie id = review.getMovie();
+		System.out.println(id);
+		
+//		return "redirect:/movie/detail?id="+id;
+		return "redirect:/review/index"; //TODO redirect to /movie/detail?id={the specific movie id we add the review in}
 	}
 	
 	// HTTP GET REQUEST - Review Index
@@ -51,8 +57,8 @@ public class ReviewController {
 		mv.setViewName("review/index");
 		mv.addObject("reviews", it);
 		
-		HomeController hc = new HomeController();
-		hc.setAppName(mv, env);
+//		HomeController hc = new HomeController();
+//		hc.setAppName(mv, env);
 		
 		return mv;
 	}
