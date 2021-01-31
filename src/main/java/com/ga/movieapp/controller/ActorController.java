@@ -9,19 +9,33 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.ga.movieapp.dao.ActorDao;
+import com.ga.movieapp.dao.MovieDao;
 import com.ga.movieapp.model.Actor;
 
 
 @Controller
 public class ActorController {
 
+	//CRUD OPERATIONS
+		// C -> Create = 
+		// R -> Select = 
+		// U -> Update = 
+		// D -> Delete = 
+
+
 		@Autowired
 		private Environment env;
+		
+		@Autowired
+		private MovieDao moviedao;
+		
 		@Autowired 
 		private ActorDao dao;
 
-		
+
+
 		//Add actor  - get request
 		@GetMapping("/actor/add")
 		public ModelAndView addActor() {
@@ -48,11 +62,11 @@ public class ActorController {
 		// index actor - get request 
 		@GetMapping("/actor/index")
 		public ModelAndView getActor() {
-			var actor = dao.findAll();
+			var it = dao.findAll();
 			
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("actor/index");
-			mv.addObject("actors", actor);
+			mv.addObject("actor", it);
 			
 			HomeController hc =new HomeController();
 			hc.setAppName(mv, env);
@@ -61,7 +75,7 @@ public class ActorController {
 		}
 		
 		// detail actor - get request 
-		@GetMapping("/actor/detail")
+		@GetMapping("/actor/deteil")
 		public ModelAndView actorDetails(@RequestParam int id ) {
 			System.out.println(id);
 			
@@ -75,30 +89,4 @@ public class ActorController {
 			hc.setAppName(mv, env);
 			
 			return mv; 
-		}
-		
-		//edit actor 
-		@GetMapping("/actor/edit")
-		public ModelAndView editActor(@RequestParam int id) {
-			Actor actor = dao.findById(id);
-			
-			ModelAndView mv = new ModelAndView();
-			mv.setViewName("actor/edit");
-			mv.addObject("actor", actor);
-			
-			HomeController hc = new HomeController();
-			hc.setAppName(mv, env);
-			
-			
-			return mv;
-		}
-		
-		//Delete actor
-		@GetMapping("/actor/delete")
-		public String deleteActor(@RequestParam int id) {
-
-			dao.deleteById(id);
-			return "redirect:/actor/index";
-		}
-
-}
+}}
