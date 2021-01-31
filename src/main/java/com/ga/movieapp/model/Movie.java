@@ -32,12 +32,10 @@ public class Movie {
 
 	@ManyToMany
 	@JoinTable(name = "movie_actor",
-	             joinColumns = {@JoinColumn(name = "movie_id")},
-	             inverseJoinColumns = {@JoinColumn (name = "actor_id")})
+	             joinColumns = {@JoinColumn(name = "actor_id")},
+	             inverseJoinColumns = {@JoinColumn (name = "movie_id")})
 	private Set<Actor> actors;
 
-//	@ManyToMany(mappedBy = "movies")
-//	private Set<Actor> actors;
 
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp

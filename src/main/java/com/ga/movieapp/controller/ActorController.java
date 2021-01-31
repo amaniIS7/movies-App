@@ -31,8 +31,6 @@ public class ActorController {
 			HomeController hc = new HomeController();
 			hc.setAppName(mv, env);
 			
-//			var it = moviedao.findAll();
-//			mv.addObject("movie", it);
 			
 			return mv; 
 		}
