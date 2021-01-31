@@ -20,7 +20,7 @@
 	
 	<div>
 		<label>Select Actors</label>
-		<select name="actors" multiple="multiple" class="form-control" >
+		<select name="actors" multiple="multiple" class="form-control">
 			<c:forEach items="${actors}" var="actor">
 				<option value="${actor.id}"> ${actor.name} </option>
 			</c:forEach>	
