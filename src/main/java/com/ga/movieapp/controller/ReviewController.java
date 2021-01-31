@@ -57,21 +57,20 @@ public class ReviewController {
 		return mv;
 	}
 
-	// HTTP GET REQUEST - Review Edit
-	@GetMapping("/review/edit")
-	public ModelAndView editReview(@RequestParam int id) {
-		Review review = dao.findById(id);
-		
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("review/edit");
-		mv.addObject("review", review);
-		
-		HomeController hc = new HomeController();
-		hc.setAppName(mv, env);
-		
-		
-		return mv;
-	}
+	/*
+	 * // HTTP GET REQUEST - Review Edit
+	 * 
+	 * @GetMapping("/review/edit") public ModelAndView editReview(@RequestParam int
+	 * id) { Review review = dao.findById(id);
+	 * 
+	 * ModelAndView mv = new ModelAndView(); mv.setViewName("review/edit");
+	 * mv.addObject("review", review);
+	 * 
+	 * HomeController hc = new HomeController(); hc.setAppName(mv, env);
+	 * 
+	 * 
+	 * return mv; }
+	 */
 	
 	// HTTP GET REQUEST - Review Delete
 	@GetMapping("/review/delete")
@@ -81,23 +80,23 @@ public class ReviewController {
 		return "redirect:/review/index";
 	}
 
-	// HTTP GET REQUEST - Review Detail
-	@GetMapping("/review/detail")
-	public ModelAndView reviewDetails(@RequestParam int id) {
-		System.out.println(id);
-		
-		Review review = dao.findById(id);
-		
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("review/detail");
-		mv.addObject("review", review);
-		
-		HomeController hc = new HomeController();
-		hc.setAppName(mv, env);
-		
-		return mv;
-		
-	}
+//	// HTTP GET REQUEST - Review Detail
+//	@GetMapping("/review/detail")
+//	public ModelAndView reviewDetails(@RequestParam int id) {
+//		System.out.println(id);
+//		
+//		Review review = dao.findById(id);
+//		
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("review/detail");
+//		mv.addObject("review", review);
+//		
+//		HomeController hc = new HomeController();
+//		hc.setAppName(mv, env);
+//		
+//		return mv;
+//		
+//	}
 
 
 }

@@ -17,3 +17,4 @@ Movie Date : ${movie.movieDate}
 	<hr>
 </c:forEach> 
 
+<jsp:include page="../review/add.jsp" />

@@ -1,6 +1,5 @@
 package com.ga.movieapp.model;
 
-
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -13,12 +12,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name="Review")
 public class Review {
 
-	
-
 	@Id
 	@GeneratedValue
-	private int Review_Id;
-	private String Review;
+	private int review_Id;
+	private String user_review;
+	private int rating;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_movieId")
+	private Movie movie;
 	
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
@@ -30,17 +32,30 @@ public class Review {
 	
 	
 	
+	public Movie getMovie() {
+		return movie;
+	}
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
 	public int getReview_Id() {
-		return Review_Id;
+		return review_Id;
 	}
 	public void setReview_Id(int review_Id) {
-		Review_Id = review_Id;
+		this.review_Id = review_Id;
 	}
-	public String getReview() {
-		return Review;
+
+	public String getUser_review() {
+		return user_review;
 	}
-	public void setReview(String review) {
-		Review = review;
+	public void setUser_review(String user_review) {
+		this.user_review = user_review;
 	}
 	public LocalDateTime getCreateAt() {
 		return createAt;
