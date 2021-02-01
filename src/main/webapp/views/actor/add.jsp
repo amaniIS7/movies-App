@@ -1,6 +1,4 @@
 <jsp:include page="../shared/_layout.jsp" />
-
-
 <form  class="form1"  action="${appName}actor/add" method="post">
  <h4 class="sign">Add Actor</h4>
    <label>     

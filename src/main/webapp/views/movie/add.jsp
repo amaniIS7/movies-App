@@ -18,13 +18,14 @@
 		<div class="line-box">
 			<div class="line"></div>
 		</div>
-	</label> 
-	<label> <select name="actors" multiple="multiple" class="input">
+	</label> <label> <select name="actors" multiple="multiple"
+		class="input">
 			<c:forEach items="${movie.getActors()}" var="actor">
 				<option value="${actor.id}">${actor.name}</option>
 			</c:forEach>
 	</select>
 		<div class="line-box">
+
 			<div class="line"></div>
 		</div>
 	</label>
