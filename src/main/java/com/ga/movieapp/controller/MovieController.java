@@ -24,7 +24,7 @@ public class MovieController {
 
 	@Autowired
 	private ReviewDao reviewdao;
-
+	
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
 	public ModelAndView addMovie() {
@@ -37,9 +37,6 @@ public class MovieController {
 
 		var actor = actordao.findAll();
 		mv.addObject("actors", actor);
-		
-		var review = reviewdao.findAll();
-		mv.addObject("actors", review);
 		
 		return mv;
 	}
@@ -54,6 +51,7 @@ public class MovieController {
 		
 		return "redirect:/movie/index";
 	}
+
 	
 	// HTTP GET REQUEST - Movie Index
 	@GetMapping("/movie/index")
@@ -101,19 +99,20 @@ public class MovieController {
 	@GetMapping("/movie/detail")
 	public ModelAndView movieDetails(@RequestParam int id) {
 		System.out.println(id);
-		
+		var it = reviewdao.findAll();
+
 		Movie movie = dao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("movie/detail");
 		mv.addObject("movie", movie);
-		
+		mv.addObject("reviews", it);
+
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
 		return mv;
 		
 	}
-
 
 }
