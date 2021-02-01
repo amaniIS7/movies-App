@@ -1,8 +1,6 @@
 package com.ga.movieapp.model;
 
 import java.time.LocalDateTime;
-import java.util.Set;
-
 import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -22,6 +20,9 @@ public class Review {
 	@JoinColumn(name = "fk_movieId")
 	private Movie movie;
 	
+	@ManyToOne
+	@JoinColumn(name = "fk_userId")
+	private User user;
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -70,6 +71,14 @@ public class Review {
 	public void setUpdateAt(LocalDateTime updateAt) {
 		this.updateAt = updateAt;
 	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	
 	
 }
 
