@@ -10,7 +10,6 @@
 <title>Movie APP</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/myStyles.css">
-<link rel="stylesheet" href="../css/stylesreg.css">
 <link rel="stylesheet" href="css/myStyles.css">
 
 </head>
@@ -39,12 +38,10 @@
 <li><a href="${appName}movie/index">Movie</a></li>
 <li><a href="${appName}actor/add">Add Actor</a></li>
 <li><a href="${appName}actor/index">Actor</a></li>
-
-<li><b>HELLO : <security:authentication property="principal.username" /> </b></li>
 <li><a href="${appName}logout">Logout</a></li>
-</ul>
+<li><a>HELLO : <security:authentication property="principal.username" /> </a></li>
 
- 
+</ul>
   	<div id="search">
 				<form action="home_submit" method="get" accept-charset="utf-8">
 					<label for="search-field">SEARCH</label>					

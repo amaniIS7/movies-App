@@ -1,23 +1,26 @@
-<jsp:include page="../shared/_layout.jsp"></jsp:include>
+<jsp:include page="../shared/_layout.jsp" />
 
 <b>${message}</b>
 <br>
 
-<form action="${appName}login" method="post">
+<form class="form1" action="${appName}login" method="post">
+ <h4 class="sign">Sign in</h4>
+            <p>Welcome to our Moive website.</p> 
+	  <label>  
+	<input  name="username"  class="input" type="email"  placeholder="Email Address">    
+	  <div class="line-box">          
+             <div class="line"></div>        
+              </div>    
+            </label> 
+	 <label>     
+            <input  name="password" class="input" type="password"  placeholder="Password">        
+              <div class="line-box">          
+                <div class="line"></div>        
 
-	<div class="form-group">
-	<label> Email Address </label>
-	<input name="username" type="email" class="form-control">
-	</div>
-	
-	<div class="form-group">
-	<label> Password </label>
-	<input name="password" type="password" class="form-control">
-	</div>
-	
-	<br>
-	
+              </div>    
+
+            </label>   
+<br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<button type="submit" class="btn btn-primary">Submit</button>
-
-</form>
+	<button type="submit">Sign in</button>
+ </form> 
