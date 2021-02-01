@@ -2,7 +2,6 @@
 <jsp:include page="../shared/_layout.jsp" />
 
 <form action="${appName}movie/add" method="post">
-
 	<div>
 		<label>Movie's Name </label> <input type="text" name="name">
 	</div>
@@ -18,8 +17,8 @@
 
 	<%-- 	<div>
 		<label>Select Actors</label>
-		<select name="actors" multiple="multiple" class="form-control" >
-			<c:forEach items="${movie.getActors()}" var="actor">
+		<select name="actors" multiple="multiple" class="form-control">
+			<c:forEach items="${actors}" var="actor">
 				<option value="${actor.id}"> ${actor.name} </option>
 			</c:forEach>	
 		</select>

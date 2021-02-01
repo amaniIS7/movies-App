@@ -15,5 +15,9 @@ Movie Date : ${movie.movieDate}
 	<div>${actor.name}</div>
 
 	<hr>
-</c:forEach> 
+</c:forEach>
 
+<!-- TODO solving showing review problem  -->
+<jsp:include page="../review/index.jsp" />
+
+		<a href="${appName}review/add?id=${movie.id}">Add review</a>

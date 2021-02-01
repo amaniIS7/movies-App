@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ga.movieapp.dao.ActorDao;
 import com.ga.movieapp.dao.MovieDao;
+import com.ga.movieapp.dao.ReviewDao;
 import com.ga.movieapp.model.Movie;
 
 @Controller
@@ -16,7 +18,13 @@ public class MovieController {
 
 	@Autowired 
 	private Environment env;
+	
+	@Autowired
+	private ActorDao actordao;
 
+	@Autowired
+	private ReviewDao reviewdao;
+	
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
 	public ModelAndView addMovie() {
@@ -26,7 +34,9 @@ public class MovieController {
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-		
+
+		var actor = actordao.findAll();
+		mv.addObject("actors", actor);
 		
 		return mv;
 	}
@@ -69,6 +79,9 @@ public class MovieController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
+//		var it = actordao.findAll();
+//		mv.addObject("actors", it);
+		
 		
 		return mv;
 	}
@@ -85,13 +98,15 @@ public class MovieController {
 	@GetMapping("/movie/detail")
 	public ModelAndView movieDetails(@RequestParam int id) {
 		System.out.println(id);
-		
+		var it = reviewdao.findAll();
+
 		Movie movie = dao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("movie/detail");
 		mv.addObject("movie", movie);
-		
+		mv.addObject("reviews", it);
+
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
