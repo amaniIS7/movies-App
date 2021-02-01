@@ -5,6 +5,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.movieapp.dao.ActorDao;
@@ -53,8 +54,7 @@ public class MovieController {
 		
 		return "redirect:/movie/index";
 	}
-<<<<<<< HEAD
-=======
+
 	
 	// HTTP GET REQUEST - Movie Index
 	@GetMapping("/movie/index")
@@ -116,6 +116,4 @@ public class MovieController {
 		
 	}
 
-
->>>>>>> master
 }
