@@ -24,7 +24,7 @@ public class MovieController {
 
 	@Autowired
 	private ReviewDao reviewdao;
-
+	
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
 	public ModelAndView addMovie() {
@@ -98,13 +98,15 @@ public class MovieController {
 	@GetMapping("/movie/detail")
 	public ModelAndView movieDetails(@RequestParam int id) {
 		System.out.println(id);
-		
+		var it = reviewdao.findAll();
+
 		Movie movie = dao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("movie/detail");
 		mv.addObject("movie", movie);
-		
+		mv.addObject("reviews", it);
+
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
