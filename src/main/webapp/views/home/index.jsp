@@ -1,8 +1,8 @@
 <jsp:include page="../shared/_layout.jsp" />
 <div id="shell">
 <div>
-    <img alt="background" src="images/back.jpg" width="980" height="600">
-    <img alt="background" src="../images/back.jpg" width="980" height="600">
+    <img alt="background" src="images/cover.jpg" width="980" height="600">
+    <img alt="background" src="../images/cover.jpg" width="980" height="600">
 	</div>
 		<!-- Footer -->
 	<div id="footer">

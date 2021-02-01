@@ -11,6 +11,7 @@
 <title>Movie APP</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="../css/myStyles.css">
 <link rel="stylesheet" href="css/myStyles.css">
 
@@ -21,6 +22,7 @@
 <div id="header">
 <h1 id="logo"><img alt="logo" src="images/logo.png"></h1>
 <h1 id="logo"><img alt="logo" src="../images/logo.png"></h1>
+<br>
 <div id="navigation">
 <security:authorize access="!isAuthenticated()">
 	<ul>
