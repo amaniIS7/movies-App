@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -36,6 +37,10 @@ public class Movie {
 	             inverseJoinColumns = {@JoinColumn (name = "actor_id")})
 	private Set<Actor> actors;
 
+	@OneToMany(mappedBy="movie")
+	private Set<Review> reviews;
+	
+	
 //	@ManyToMany(mappedBy = "movies")
 //	private Set<Actor> actors;
 
