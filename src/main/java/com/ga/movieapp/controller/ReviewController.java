@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ga.movieapp.dao.MovieDao;
 import com.ga.movieapp.dao.ReviewDao;
 import com.ga.movieapp.model.Movie;
 import com.ga.movieapp.model.Review;
@@ -17,13 +18,23 @@ public class ReviewController {
 
 	@Autowired 
 	private Environment env;
-
+	
+	@Autowired
+	private ReviewDao dao;
+	
+	@Autowired
+	private MovieDao movieDao;
+	
 	// HTTP GET REQUEST - Review Add
 	@GetMapping("/review/add")
-	public ModelAndView addReview() {
+	public ModelAndView addReview(@RequestParam int id) {
+		System.out.println(id);
+		
+		Movie movie = movieDao.findById(id);
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("review/add");
-		
+		mv.addObject("movie", movie);
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
@@ -32,20 +43,16 @@ public class ReviewController {
 		return mv;
 	}
 	
-	@Autowired
-	private ReviewDao dao;
-	
 	// HTTP POST REQUEST - Review Add
 	@PostMapping("/review/add")
 	public String addReview(Review review) {
+		System.out.println(review.getRating());
 		dao.save(review);
 		
-//		int id = review.getMovie().getId();
-		Movie id = review.getMovie();
-		System.out.println(id);
+		int id = review.getMovie().getId();
+//		System.out.println(id);
 		
-//		return "redirect:/movie/detail?id="+id;
-		return "redirect:/review/index"; //TODO redirect to /movie/detail?id={the specific movie id we add the review in}
+		return "redirect:/movie/detail?id="+id;
 	}
 	
 	// HTTP GET REQUEST - Review Index
@@ -78,13 +85,13 @@ public class ReviewController {
 	 * return mv; }
 	 */
 	
-	// HTTP GET REQUEST - Review Delete
-	@GetMapping("/review/delete")
-	public String deleteReview(@RequestParam int id) {
-
-		dao.deleteById(id);
-		return "redirect:/review/index";
-	}
+//	// HTTP GET REQUEST - Review Delete
+//	@GetMapping("/review/delete")
+//	public String deleteReview(@RequestParam int id) {
+//
+//		dao.deleteById(id);
+//		return "redirect:/review/index";
+//	}
 
 //	// HTTP GET REQUEST - Review Detail
 //	@GetMapping("/review/detail")

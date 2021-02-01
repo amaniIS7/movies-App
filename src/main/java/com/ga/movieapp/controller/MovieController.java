@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.movieapp.dao.ActorDao;
 import com.ga.movieapp.dao.MovieDao;
+import com.ga.movieapp.dao.ReviewDao;
 import com.ga.movieapp.model.Movie;
 
 @Controller
@@ -21,6 +22,9 @@ public class MovieController {
 	@Autowired
 	private ActorDao actordao;
 
+	@Autowired
+	private ReviewDao reviewdao;
+
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
 	public ModelAndView addMovie() {
@@ -31,8 +35,11 @@ public class MovieController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 
-		var it = actordao.findAll();
-		mv.addObject("actors", it);
+		var actor = actordao.findAll();
+		mv.addObject("actors", actor);
+		
+		var review = reviewdao.findAll();
+		mv.addObject("actors", review);
 		
 		return mv;
 	}

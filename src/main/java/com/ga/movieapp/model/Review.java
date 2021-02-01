@@ -16,7 +16,7 @@ public class Review {
 	@GeneratedValue
 	private int review_Id;
 	private String user_review;
-	private int rating;
+	private String rating;
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_movieId")
@@ -38,10 +38,11 @@ public class Review {
 	public void setMovie(Movie movie) {
 		this.movie = movie;
 	}
-	public int getRating() {
+
+	public String getRating() {
 		return rating;
 	}
-	public void setRating(int rating) {
+	public void setRating(String rating) {
 		this.rating = rating;
 	}
 	public int getReview_Id() {

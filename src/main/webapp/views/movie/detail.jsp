@@ -17,6 +17,7 @@ Movie Date : ${movie.movieDate}
 	<hr>
 </c:forEach>
 
+<!-- TODO solving showing review problem  -->
 <jsp:include page="../review/index.jsp" />
 
-		<a href="${appName}review/add">Add review</a>
+		<a href="${appName}review/add?id=${movie.id}">Add review</a>

@@ -30,52 +30,81 @@
 <form action="${appName}review/add" method="post">
 
 	<div>
-		<label>What do you think about this movie?</label> 
-		<input type="text" name="user_review">
+		<label>What do you think about this movie?</label> <input type="text"
+			name="user_review">
 	</div>
 
-	<div>
-		<label>what's your rating for the movie?</label> 
-		<input type="number" name="rating">
-	</div>
-	<div class="rating">
+<!--  <div>
+		<label>what's your rating for the movie?</label> <input type="number"
+			name="rating">
+	</div>  -->
+	<!-- TODO getting the rating value as integer  -->
+	
+	<input id="ratingNum" name="rating" type="hidden">
+	<div class="rating">	
 		<div id="star1" class="clip-star"></div>
 		<div id="star2" class="clip-star"></div>
 		<div id="star3" class="clip-star"></div>
 		<div id="star4" class="clip-star"></div>
 		<div id="star5" class="clip-star"></div>
 	</div>
+
+	<input name="movie" type="hidden" value="${movie.id}">
+	${movie.id}
+
 	<button type="submit">Submit</button>
 
 </form>
 <script type="text/javascript">
-	document.getElementById('star1').addEventListener('click', function(event) {
-		document.getElementById('star1').classList.add('clip-star-active');
-	});
 
-	document.getElementById('star2').addEventListener('click', function(event) {
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	});
+		var x = 0;
+		document.getElementById('star1').addEventListener('click', function(event) {
+			document.getElementById('star1').classList.add('clip-star-active');
+			x = 1;
+			console.log(x)
+			var e = document.getElementById("ratingNum");
+			e.setAttribute("value", x);
+		});
 
-	document.getElementById('star3').addEventListener('click', function(event) {
-		document.getElementById('star3').classList.add('clip-star-active');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	});
+		document.getElementById('star2').addEventListener('click', function(event) {
+			document.getElementById('star2').classList.add('clip-star-active');
+			document.getElementById('star1').classList.add('clip-star-active');
+			x = 2;
+			console.log(x)
+			var e = document.getElementById("ratingNum");
+			e.setAttribute("value", x);
 
-	document.getElementById('star4').addEventListener('click', function(event) {
-		document.getElementById('star4').classList.add('clip-star-active');
-		document.getElementById('star3').classList.add('clip-star-active');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	});
+		});
 
-	document.getElementById('star5').addEventListener('click', function(event) {
-		document.getElementById('star5').classList.add('clip-star-active');
-		document.getElementById('star4').classList.add('clip-star-active');
-		document.getElementById('star3').classList.add('clip-star-active');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	});
+		document.getElementById('star3').addEventListener('click', function(event) {
+			document.getElementById('star3').classList.add('clip-star-active');
+			document.getElementById('star2').classList.add('clip-star-active');
+			document.getElementById('star1').classList.add('clip-star-active');
+			x = 3;
+			var e = document.getElementById("ratingNum");
+			e.setAttribute("value", x);
+		});
+
+		document.getElementById('star4').addEventListener('click', function(event) {
+			document.getElementById('star4').classList.add('clip-star-active');
+			document.getElementById('star3').classList.add('clip-star-active');
+			document.getElementById('star2').classList.add('clip-star-active');
+			document.getElementById('star1').classList.add('clip-star-active');
+			x = 4;
+			var e = document.getElementById("ratingNum");
+			e.setAttribute("value", x);
+		});
+
+		document.getElementById('star5').addEventListener('click', function(event) {
+			document.getElementById('star5').classList.add('clip-star-active');
+			document.getElementById('star4').classList.add('clip-star-active');
+			document.getElementById('star3').classList.add('clip-star-active');
+			document.getElementById('star2').classList.add('clip-star-active');
+			document.getElementById('star1').classList.add('clip-star-active');
+			x = 5;
+			var e = document.getElementById("ratingNum");
+			e.setAttribute("value", x);
+		});	
+		console.log("rating value"+x)
+
 </script>
