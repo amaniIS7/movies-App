@@ -15,14 +15,14 @@
 		<label>Date of Movie </label> <input type="date" name="movieDate">
 	</div>
 
-	<%-- 	<div>
-		<label>Select Actors</label>
-		<select name="actors" multiple="multiple" class="form-control">
+	<div>
+		<label>Select Actors</label> <select name="actors" multiple="multiple"
+			class="form-control">
 			<c:forEach items="${actors}" var="actor">
-				<option value="${actor.id}"> ${actor.name} </option>
-			</c:forEach>	
+				<option value="${actor.id}">${actor.name}</option>
+			</c:forEach>
 		</select>
-	</div> --%>
+	</div>
 
 	<input type="hidden" name="${_csrf.parameterName}"
 		value="${_csrf.token}" />
