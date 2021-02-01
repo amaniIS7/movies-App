@@ -38,9 +38,6 @@ public class MovieController {
 		var actor = actordao.findAll();
 		mv.addObject("actors", actor);
 		
-		var review = reviewdao.findAll();
-		mv.addObject("actors", review);
-		
 		return mv;
 	}
 	
