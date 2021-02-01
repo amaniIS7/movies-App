@@ -5,12 +5,14 @@
 	<td>rating</td>
 
 	<c:forEach items="${reviews}" var="review">
-		<tr>
-			<td>${review.user_review}</td>
-			<td>${review.rating}</td>
+		<c:if test="${review.movie.id == movie.id}">
 
-			<td><a href="${appName}review/delete?id=${review.review_Id}">Delete</a></td>
-		</tr>
+			<tr>
+				<td>${review.user_review}</td>
+				<td>${review.rating}</td>
+
+				<td><a href="${appName}review/delete?id=${review.review_Id}">Delete</a></td>
+			</tr>
+		</c:if>
 	</c:forEach>
-
 </table>
