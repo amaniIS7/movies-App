@@ -31,6 +31,7 @@ public class ActorController {
 
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
+
 		return mv;
 	}
 

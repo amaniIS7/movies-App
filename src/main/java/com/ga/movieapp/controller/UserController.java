@@ -9,9 +9,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.movieapp.dao.UserDao;
+import com.ga.movieapp.model.Actor;
 import com.ga.movieapp.model.User;
 
 
@@ -88,6 +90,25 @@ public class UserController {
 			
 			return mv;
 		}
+		
+		// Load user profile
+		 @GetMapping("/user/userprofile")
+			public ModelAndView userProfile() {
+//				System.out.println(id);
+             System.out.println("hi");
+//				User user = dao.findById(id);
+
+				ModelAndView mv = new ModelAndView();
+				mv.setViewName("user/profile");
+//				mv.addObject("user", user);
+
+				return mv;
+			}
+		
+
+		
+
+		
 	
 //	// To post the login form
 //	 @PostMapping("/user/login")
@@ -142,7 +163,6 @@ public class UserController {
 //	 }
 //	 
 //	
-//	// Load user profile
-//	// @GetMapping("/user/profile")
+
 
 }
