@@ -29,16 +29,18 @@ img {
 			<c:forEach items="${actors}" var="actor">
 				<option value="${actor.id}">${actor.name}</option>
 			</c:forEach>
-	</select>
-		<div class="line-box">
-
-			<div class="line"></div>
-		</div>
-	</label>
-<label for="file">
-<input name="poster" type="file" class="input" placeholder="Upload Movie Poster" id="file"  onchange="loadFile(event)" accept="image/*">
-
- </label>
+		</select>
+	</div>
+	
+	<label for="file">Upload Movie Poster </label>
+	</br>
+	<input type="file"  accept="image/*" id="file"  onchange="loadFile(event)">
+	<input name="poster" type="hidden" id="sendposter">
+	</br>
+	<img id="output" width="200" />
+	</br>
+	
+	</br> </br> </br> </br>
 	
 	<input type="hidden" name="${_csrf.parameterName}"
 		value="${_csrf.token}" />
@@ -52,6 +54,7 @@ var loadFile = function(event) {
 	var url = URL.createObjectURL(event.target.files[0]);
 	console.log(url);
 	image.src = url;
+	document.getElementById("sendposter").setAttribute("value", url);
 };
 </script>
 

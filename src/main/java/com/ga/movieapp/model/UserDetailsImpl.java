@@ -12,6 +12,7 @@ public class UserDetailsImpl implements UserDetails{
 	
 	private String username;
 	private String password;
+	private int id;
 	private List<GrantedAuthority> authorities;
 	
 	// Constructor
@@ -19,6 +20,7 @@ public class UserDetailsImpl implements UserDetails{
 		// TODO Auto-generated constructor stub
 		this.username = user.getEmailAddress();
 		this.password = user.getPassword();
+		this.id = user.getId();
 		this.authorities = Arrays.stream(user.getUserRole().split(","))
 								.map(SimpleGrantedAuthority::new)
 								.collect(Collectors.toList());
@@ -31,6 +33,16 @@ public class UserDetailsImpl implements UserDetails{
 		return authorities;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub

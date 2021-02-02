@@ -85,13 +85,18 @@ public class ReviewController {
 	 * return mv; }
 	 */
 	
-//	// HTTP GET REQUEST - Review Delete
-//	@GetMapping("/review/delete")
-//	public String deleteReview(@RequestParam int id) {
-//
-//		dao.deleteById(id);
-//		return "redirect:/review/index";
-//	}
+	// HTTP GET REQUEST - Review Delete
+	@GetMapping("/review/delete")
+	public String deleteReview(@RequestParam int id) {
+
+		dao.deleteById(id);
+		
+//		Movie movie = 
+////		System.out.println(id);
+//		
+//		return "redirect:/movie/detail?id="+id;
+		return "redirect:/movie/index";
+	}
 
 //	// HTTP GET REQUEST - Review Detail
 //	@GetMapping("/review/detail")

@@ -38,16 +38,20 @@
 
 	<div id="sub-navigation">
 	<security:authorize access="isAuthenticated()">
-<ul>
-<li><a href="${appName}">Home</a></li>
-<li><a href="${appName}movie/add">Add Movie</a></li>
-<li><a href="${appName}movie/index">Movie</a></li>
-<li><a href="${appName}actor/add">Add Actor</a></li>
-<li><a href="${appName}actor/index">Actor</a></li>
-<li><a href="${appName}logout">Logout</a></li>
-<li><a>HELLO : <security:authentication property="principal.username" /> </a></li>
 
-</ul>
+		<a href="${appName}">Home</a>
+
+		<a href="${appName}movie/add">Add Movie</a>
+		<a href="${appName}movie/index">Movie</a>
+
+		<a href="${appName}actor/add">Add Actor</a>
+		<a href="${appName}actor/index">Actor</a>
+
+		<div style="text-align: right; float: right;">
+
+			<a href="${appName}user/profile?id=<security:authentication property="principal.id" />">Hi: <security:authentication property="principal.username" />
+			
+			</a> <a href="${appName}logout">Logout</a>
 		</div>
 		 </security:authorize>
 		 </div>
