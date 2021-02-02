@@ -8,6 +8,6 @@
 
 
 ### User Story 
-[here](userStory.md)
+[here](/readme/userStory.md)
 ### wireframes
-[here](wireframes.md)
+[here](/readme/wireframes.md)
