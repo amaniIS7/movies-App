@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="../shared/_layout.jsp" />
 <style>
 .clip-star {
 	cursor: pointer;
@@ -6,8 +7,8 @@
 	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%,
 		32% 57%, 2% 35%, 39% 35%);
 	display: inline-block;
-	height: 100px;
-	width: 100px;
+	height: 40px;
+	width: 40px;
 }
 
 .clip-star-active {
@@ -16,32 +17,26 @@
 	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%,
 		32% 57%, 2% 35%, 39% 35%);
 	display: inline-block;
-	height: 100px;
-	width: 100px;
+	height: 40px;
+	width: 40px;
 }
 /* PRESENTATION STYLES */
 .rating {
 	align-items: center;
-	background: #333;
+
 	display: flex;
-	height: 100vh;
+	height: 10vh;
 	justify-content: center;
 }
 </style>
-
-<form action="${appName}review/add" method="post">
-
-	<div>
-		<label>What do you think about this movie?</label> <input type="text"
-			name="user_review">
-	</div>
-
-	<!--  <div>
-		<label>what's your rating for the movie?</label> <input type="number"
-			name="rating">
-	</div>  -->
-	<!-- TODO getting the rating value as integer  -->
-
+<form class="form1" action="${appName}review/add" method="post">
+	<h4 class="sign">Add Review </h4>
+	<label> <input name="user_review" type="text" class="input"
+		placeholder="What do you think about this movie?">
+		<div class="line-box">
+			<div class="line"></div>
+		</div>
+	</label> <label> 
 	<input id="ratingNum" name="rating" type="hidden">
 	<div class="rating">
 		<div id="star1" class="clip-star"></div>
@@ -50,13 +45,20 @@
 		<div id="star4" class="clip-star"></div>
 		<div id="star5" class="clip-star"></div>
 	</div>
+		<br>
+		<br>
+	</label> 
 
-	<input name="movie" type="hidden" value="${movie.id}">
-	${movie.id} <input type="hidden" name="${_csrf.parameterName}"
-		value="${_csrf.token}" />
+	
+    <input name="movie" type="hidden" value="${movie.id}">	
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	<br>
 	<button type="submit">Submit</button>
 
 </form>
+
+
+
 <script type="text/javascript">
 	var x = 0;
 	document.getElementById('star1').addEventListener('click', function(event) {
