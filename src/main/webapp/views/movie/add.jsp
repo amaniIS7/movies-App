@@ -35,12 +35,10 @@ img {
 			<div class="line"></div>
 		</div>
 	</label>
-<label for="file">Upload Movie Poster </label>
-	</br>
-	<input type="file"  accept="image/*" name="poster" id="file"  onchange="loadFile(event)">
-	</br>
-	<img id="output" width="200" />
-	</br>
+<label for="file">
+<input name="poster" type="file" class="input" placeholder="Upload Movie Poster" id="file"  onchange="loadFile(event)" accept="image/*">
+
+ </label>
 	
 	<input type="hidden" name="${_csrf.parameterName}"
 		value="${_csrf.token}" />
@@ -56,4 +54,4 @@ var loadFile = function(event) {
 	image.src = url;
 };
 </script>
->>>>>>> master
+
