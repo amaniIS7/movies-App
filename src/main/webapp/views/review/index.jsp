@@ -20,9 +20,7 @@
 /* PRESENTATION STYLES */
 .rating {
 	align-items: center;
-	background: #333;
 	display: flex;
-	height: 10vh;
 	justify-content: center;
 }
 </style>
@@ -37,63 +35,62 @@
 			<input id="rate" type="hidden" value="${review.rating}"></input>
 			<tr>
 				<td>${review.user_review}</td>
+
 				<td>
-					<div class="rating">
-						<div id="star1" class="clip-star"></div>
-						<div id="star2" class="clip-star"></div>
-						<div id="star3" class="clip-star"></div>
-						<div id="star4" class="clip-star"></div>
-						<div id="star5" class="clip-star"></div>
-					</div>
-				</td>
+				<c:if test="${review.rating == '1'  }">
+						<div class="rating">
+							<div id="star1" class="clip-star clip-star-active"></div>
+							<div id="star2" class="clip-star"></div>
+							<div id="star3" class="clip-star"></div>
+							<div id="star4" class="clip-star"></div>
+							<div id="star5" class="clip-star"></div>
+						</div>
+					</c:if>
+					
+					<c:if test="${review.rating == '2'  }">
+						<div class="rating">
+							<div id="star1" class="clip-star clip-star-active"></div>
+							<div id="star2" class="clip-star clip-star-active"></div>
+							<div id="star3" class="clip-star"></div>
+							<div id="star4" class="clip-star"></div>
+							<div id="star5" class="clip-star"></div>
+						</div>
+					</c:if>
+					
+					<c:if test="${review.rating == '3'  }">
+						<div class="rating">
+							<div id="star1" class="clip-star clip-star-active"></div>
+							<div id="star2" class="clip-star clip-star-active"></div>
+							<div id="star3" class="clip-star clip-star-active"></div>
+							<div id="star4" class="clip-star"></div>
+							<div id="star5" class="clip-star"></div>
+						</div>
+					</c:if>
+					
+					<c:if test="${review.rating == '4'  }">
+						<div class="rating">
+							<div id="star1" class="clip-star clip-star-active"></div>
+							<div id="star2" class="clip-star clip-star-active"></div>
+							<div id="star3" class="clip-star clip-star-active"></div>
+							<div id="star4" class="clip-star clip-star-active"></div>
+							<div id="star5" class="clip-star"></div>
+						</div>
+					</c:if>
+					
+					<c:if test="${review.rating == '5'  }">
+						<div class="rating">
+							<div id="star1" class="clip-star clip-star-active"></div>
+							<div id="star2" class="clip-star clip-star-active"></div>
+							<div id="star3" class="clip-star clip-star-active"></div>
+							<div id="star4" class="clip-star clip-star-active"></div>
+							<div id="star5" class="clip-star clip-star-active"></div>
+						</div>
+					</c:if>
+					
+					</td>
 
 				<td><a href="${appName}review/delete?id=${review.review_Id}">Delete</a></td>
 			</tr>
 		</c:if>
 	</c:forEach>
 </table>
-
-<script type="text/javascript">
-	var e = document.getElementById('rate').getAttribute('value');
-	console.log(e);
-
-	if (e == "1") {
-		document.getElementById('star5').setAttribute('class', 'clip-star');
-		document.getElementById('star4').setAttribute('class', 'clip-star');
-		document.getElementById('star3').setAttribute('class', 'clip-star');
-		document.getElementById('star2').setAttribute('class', 'clip-star');
-		document.getElementById('star1').classList.add('clip-star-active');
-	}
-
-	else if (e == "2") {
-		document.getElementById('star5').setAttribute('class', 'clip-star');
-		document.getElementById('star4').setAttribute('class', 'clip-star');
-		document.getElementById('star3').setAttribute('class', 'clip-star');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	}
-
-	else if (e == "3") {
-		document.getElementById('star5').setAttribute('class', 'clip-star');
-		document.getElementById('star4').setAttribute('class', 'clip-star');
-		document.getElementById('star3').classList.add('clip-star-active');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	}
-
-	else if (e == "4") {
-		document.getElementById('star5').setAttribute('class', 'clip-star');
-		document.getElementById('star4').classList.add('clip-star-active');
-		document.getElementById('star3').classList.add('clip-star-active');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	}
-
-	else {
-		document.getElementById('star5').classList.add('clip-star-active');
-		document.getElementById('star4').classList.add('clip-star-active');
-		document.getElementById('star3').classList.add('clip-star-active');
-		document.getElementById('star2').classList.add('clip-star-active');
-		document.getElementById('star1').classList.add('clip-star-active');
-	}
-</script>
