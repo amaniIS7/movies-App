@@ -4,10 +4,13 @@
 ### dependencies
 ### Tech
 * java 
-* spring 
+* spring boot
 * tomcat server 
-* css 
+* css , bootstrap
 * java script
+* MySQL
+* AWS Deployment 
+
 
 
 ### User Story 
