@@ -1,4 +1,7 @@
 # MovieApp
+## abut
+### unsolved problems 
+### dependencies
 ### Tech
 * java 
 * spring 
