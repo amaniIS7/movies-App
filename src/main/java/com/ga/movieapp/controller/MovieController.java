@@ -1,5 +1,10 @@
 package com.ga.movieapp.controller;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -25,6 +30,9 @@ public class MovieController {
 	@Autowired
 	private ReviewDao reviewdao;
 	
+	@Autowired
+	HttpServletRequest request;
+
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
 	public ModelAndView addMovie() {
@@ -47,9 +55,18 @@ public class MovieController {
 	// HTTP POST REQUEST - Movie Add
 	@PostMapping("/movie/add")
 	public String  addMovie(Movie movie) {
-		dao.save(movie);
-		
-		return "redirect:/movie/index";
+//		HttpSession session = request.getSession();
+//		if (!movie.getName().equals("") && !movie.getDescription().equals("") && movie.getActors() != null) {
+			dao.save(movie);
+//			session.setAttribute("message", "your adding successfully");
+//			session.setAttribute("class", "alert alert-primary");
+			return "redirect:/movie/index";
+//		} else {
+//			session.setAttribute("message", "adding not successfully");
+//			session.setAttribute("class", "alert alert-danger");
+//			return "redirect:/movie/add";
+//		}
+
 	}
 
 	

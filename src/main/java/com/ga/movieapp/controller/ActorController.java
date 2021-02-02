@@ -18,6 +18,7 @@ public class ActorController {
 	private ActorDao dao;
 	@Autowired
 	HttpServletRequest request;
+	
 	// Add actor - get request
 	@GetMapping("/actor/add")
 	public ModelAndView addActor() {
@@ -33,11 +34,11 @@ public class ActorController {
 		HttpSession session = request.getSession();
 		if (!actor.getName().equals("")) {
 			dao.save(actor);
-			session.setAttribute("message", "your adding successfully");
-			session.setAttribute("class", "alert alert-primary");
+//			session.setAttribute("message", "adding successfully");
+//			session.setAttribute("class", "alert alert-primary");
 			return "redirect:/actor/index";
 		} else {
-			session.setAttribute("message", "adding not successfully");
+			session.setAttribute("message", "Adding failed, you have to fill all the fields ^^");
 			session.setAttribute("class", "alert alert-danger");
 			return "redirect:/actor/add";
 		}
