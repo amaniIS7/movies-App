@@ -12,6 +12,8 @@
 			<td><a href="${appName}movie/detail?id=${movie.id}">${movie.name}</a></td>
 			<td>${movie.description}</td>
 			<td>${movie.movieDate}</td>
+			
+			<td><img src="${movie.poster}"/></td>
 
 			<td><a href="${appName}movie/edit?id=${movie.id}">Edit</a></td>
 			<td><a href="${appName}movie/delete?id=${movie.id}">Delete</a></td>

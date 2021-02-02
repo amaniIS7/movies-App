@@ -36,7 +36,8 @@ img {
 	
 	<label for="file">Upload Movie Poster </label>
 	</br>
-	<input type="file"  accept="image/*" name="poster" id="file"  onchange="loadFile(event)">
+	<input type="file"  accept="image/*" id="file"  onchange="loadFile(event)">
+	<input name="poster" type="hidden" id="sendposter">
 	</br>
 	<img id="output" width="200" />
 	</br>
@@ -54,5 +55,6 @@ var loadFile = function(event) {
 	var url = URL.createObjectURL(event.target.files[0]);
 	console.log(url);
 	image.src = url;
+	document.getElementById("sendposter").setAttribute("value", url);
 };
 </script>
