@@ -8,18 +8,17 @@
 			<div class="line"></div>
 		</div>
 	</label> <label> <input name="description" type="text" class="input"
-		placeholder="Description about the movie" value="${movie.movieDate}">
+		placeholder="Description about the movie" value="${movie.description}">
 		<div class="line-box">
 			<div class="line"></div>
 		</div>
 	</label> <label> <input name="movieDate" type="date" class="input"
-		placeholder="Release year" "${movie.movieDate}">
+		placeholder="Release year" value="${movie.movieDate}">
 		<div class="line-box">
 			<div class="line"></div>
 		</div>
-	</label> <label> <select name="actors" multiple="multiple"
-		class="input">
-			<c:forEach items="${movie.getActors()}" var="actor">
+	</label> <label> <select name="actors" multiple="multiple" class="input">
+			<c:forEach items="${actors}" var="actor">
 				<option value="${actor.id}">${actor.name}</option>
 			</c:forEach>
 	</select>
