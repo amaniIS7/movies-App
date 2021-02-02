@@ -33,8 +33,8 @@
 
 		<div style="text-align: right; float: right;">
 
-			<b>Hi: <security:authentication property="principal.username" />
-			</b> <a href="${appName}logout">Logout</a>
+			<a href="${appName}user/profile">Hi: <security:authentication property="principal.username" />
+			</a> <a href="${appName}logout">Logout</a>
 		</div>
 	</security:authorize>
 
