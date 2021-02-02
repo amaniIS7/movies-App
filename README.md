@@ -1,13 +1,19 @@
 # MovieApp
+## abut
+### unsolved problems 
+### dependencies
 ### Tech
 * java 
-* spring 
+* spring boot
 * tomcat server 
-* css 
+* css , bootstrap
 * java script
+* MySQL
+* AWS Deployment 
+
 
 
 ### User Story 
-[here](userStory.md)
+[here](/readme/userStory.md)
 ### wireframes
-[here](wireframes.md)
+[here](/readme/wireframes.md)
