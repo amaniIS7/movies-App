@@ -1,5 +1,10 @@
 package com.ga.movieapp.controller;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -24,6 +29,9 @@ public class MovieController {
 
 	@Autowired
 	private ReviewDao reviewdao;
+	
+	@Autowired
+	HttpServletRequest request;
 
 	// HTTP GET REQUEST - Movie Add
 	@GetMapping("/movie/add")
@@ -38,9 +46,6 @@ public class MovieController {
 		var actor = actordao.findAll();
 		mv.addObject("actors", actor);
 		
-		var review = reviewdao.findAll();
-		mv.addObject("actors", review);
-		
 		return mv;
 	}
 	
@@ -50,9 +55,18 @@ public class MovieController {
 	// HTTP POST REQUEST - Movie Add
 	@PostMapping("/movie/add")
 	public String  addMovie(Movie movie) {
-		dao.save(movie);
-		
-		return "redirect:/movie/index";
+//		HttpSession session = request.getSession();
+//		if (!movie.getName().equals("") && !movie.getDescription().equals("") && movie.getActors() != null) {
+			dao.save(movie);
+//			session.setAttribute("message", "your adding successfully");
+//			session.setAttribute("class", "alert alert-primary");
+			return "redirect:/movie/index";
+//		} else {
+//			session.setAttribute("message", "adding not successfully");
+//			session.setAttribute("class", "alert alert-danger");
+//			return "redirect:/movie/add";
+//		}
+
 	}
 	
 	// HTTP GET REQUEST - Movie Index
@@ -101,13 +115,15 @@ public class MovieController {
 	@GetMapping("/movie/detail")
 	public ModelAndView movieDetails(@RequestParam int id) {
 		System.out.println(id);
-		
+		var it = reviewdao.findAll();
+
 		Movie movie = dao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("movie/detail");
 		mv.addObject("movie", movie);
-		
+		mv.addObject("reviews", it);
+
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		

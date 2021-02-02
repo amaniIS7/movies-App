@@ -31,17 +31,25 @@ public class ActorController {
 
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-		
+
 		return mv;
 	}
 
 	// Add actor - post request
 	@PostMapping("/actor/add")
 	public String addActor(Actor actor) {
-		dao.save(actor);
-	
+
+		HttpSession session = request.getSession();
+		if (!actor.getName().equals("")) {
+			dao.save(actor);
+//			session.setAttribute("message", "adding successfully");
+//			session.setAttribute("class", "alert alert-primary");
 			return "redirect:/actor/index";
-		
+		} else {
+			session.setAttribute("message", "Adding failed, you have to fill all the fields ^^");
+			session.setAttribute("class", "alert alert-danger");
+			return "redirect:/actor/add";
+		}
 	}
 
 	// index actor - get request

@@ -1,9 +1,9 @@
-<%-- <jsp:include page="../shared/_layout.jsp"></jsp:include>
+<jsp:include page="../shared/_layout.jsp"></jsp:include>
 
 <b>${message}</b>
 <br>
 
-<form action="${appName}user/login" method="post">
+<form action="${appName}login" method="post">
 
 	<div class="form-group">
 	<label> Email Address </label>
@@ -17,7 +17,7 @@
 	
 	<br>
 	
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
- --%>

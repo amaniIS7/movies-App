@@ -30,6 +30,8 @@ public class Movie {
 	private String description;
 
 	private Date movieDate;
+	
+	private String poster;
 
 	@ManyToMany
 	@JoinTable(name = "movie_actor",
@@ -105,7 +107,21 @@ public class Movie {
 		this.actors = actors;
 	}
 
+	public String getPoster() {
+		return poster;
+	}
 
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+
+	public Set<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
+	}
 
 	
 }

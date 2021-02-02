@@ -24,7 +24,7 @@ public class User {
 	private String userName;
 	private String firstName;
 	private String lastName;
-	private String roleUser;
+	private String userRole;
 	private String emailAddress;
 	private String password;
 
@@ -49,14 +49,7 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -73,12 +66,12 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getRoleUser() {
-		return roleUser;
+	public String getUserRole() {
+		return userRole;
 	}
 
-	public void setRoleUser(String roleUser) {
-		this.roleUser = roleUser;
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
 	}
 
 	public String getEmailAddress() {
