@@ -1,21 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
-<table>
-  <thead>
-    <tr>
-      <th>Actors Name</th>
-     <th> Actions</th>
-    </tr>
-  </thead>
-<c:forEach items="${actors}" var="actor">
- <tbody>
-    <tr>
-      <td><strong><h1>${actor.name}</h1></strong></td>
-      <td><a href="${appName}actor/edit?id=${actor.id}">Edit</a>
-|| <a href="${appName}actor/delete?id=${actor.id}">Delete</a>|| 
-<a href="${appName}actor/detail?id=${actor.id}">see detail</a></td>
- 
-    </tr>
-  </tbody>
-  </c:forEach>
-</table>
+  
+    <c:forEach items="${actors}" var="actor">
+   <div>
+    <div class="w3-container w3-center">
+      <h3><b>${actor.name}</b></h3>
+    
+           <div class="w3-section">
+        <a  class="w3-button w3-green" href="${appName}actor/edit?id=${actor.id}">Edit</a>
+        <a  class="w3-button w3-green" href="${appName}actor/delete?id=${actor.id}">Delete</a>
+         <a  class="w3-button w3-green" href="${appName}actor/detail?id=${actor.id}">see detail</a>
+      </div>
+    </div>
+  </div>
+    </c:forEach>
