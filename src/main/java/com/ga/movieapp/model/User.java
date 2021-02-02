@@ -20,19 +20,23 @@ public class User {
 	
 	@Id
 	@GeneratedValue
+<<<<<<< HEAD
 	private int user_Id;
 
+=======
+	private int id;
+	private String userName;
+>>>>>>> c23c9de51dc1768bd2b02b0f8f62b2affd43b5ab
 	private String firstName;
 	private String lastName;
 	private String userRole;
 	private String emailAddress;
 	private String password;
-	
-	
-	
 
-//	@OneToMany(mappedBy="user")
-//	private Set<Review> reviews;
+
+	@OneToMany(mappedBy="user")
+	private Set<Review> reviews;
+	
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -42,12 +46,12 @@ public class User {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 
-	public int getUser_Id() {
-		return user_Id;
+	public int getId() {
+		return id;
 	}
 
-	public void setUser_Id(int user_Id) {
-		this.user_Id = user_Id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	
@@ -107,6 +111,12 @@ public class User {
 		this.updateAt = updateAt;
 	}
 	
-	
+		public Set<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
+	}
 
 }

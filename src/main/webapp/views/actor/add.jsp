@@ -1,4 +1,6 @@
 <jsp:include page="../shared/_layout.jsp" />
+
+
 <form action="${appName}actor/add" method="post">
 <div>${message}</div>
 <div>

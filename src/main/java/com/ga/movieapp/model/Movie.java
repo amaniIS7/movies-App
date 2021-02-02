@@ -41,10 +41,7 @@ public class Movie {
 
 	@OneToMany(mappedBy="movie")
 	private Set<Review> reviews;
-	
-	
-//	@ManyToMany(mappedBy = "movies")
-//	private Set<Actor> actors;
+
 
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
