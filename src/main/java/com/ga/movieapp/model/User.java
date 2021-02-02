@@ -20,13 +20,8 @@ public class User {
 	
 	@Id
 	@GeneratedValue
-<<<<<<< HEAD
-	private int user_Id;
-
-=======
 	private int id;
 	private String userName;
->>>>>>> c23c9de51dc1768bd2b02b0f8f62b2affd43b5ab
 	private String firstName;
 	private String lastName;
 	private String userRole;
