@@ -49,8 +49,10 @@
 
 		<div style="text-align: right; float: right;">
 
-			<a href="${appName}user/profile?id=<security:authentication property="principal.id" />">Hi: <security:authentication property="principal.username" />
-			
+			<a
+				href="${appName}user/profile?id=<security:authentication property="principal.id" />">Hi:
+				<security:authentication property="principal.username" />
+
 			</a> <a href="${appName}logout">Logout</a>
 		</div>
 		 </security:authorize>
