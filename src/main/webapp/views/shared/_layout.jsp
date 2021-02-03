@@ -63,6 +63,7 @@
 							WELCOME <security:authentication property="principal.username"/></a>
 						<a href="${appName}logout" class="w3-bar-item w3-button"><i
 							class="fa fa-th"></i>LOGOUT</a>
+
 							
 					</security:authorize>
 				</div>

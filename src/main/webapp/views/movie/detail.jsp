@@ -27,6 +27,7 @@ Movie Date : ${movie.movieDate}
 		<div class="w3-col m6" style="width: 400px; height: 300px;">
 			<img class="w3-image w3-round-large" src="../images/movie1.jpg"
 				width="200" alt="poster">
+
 		</div>
 		<div class="w3-col m6">
 			<h3>${movie.name}</h3>
@@ -42,6 +43,7 @@ Movie Date : ${movie.movieDate}
 
 			<jsp:include page="../review/index.jsp" />
 
+<<<<<<< HEAD
 			
 				<p>
 				<security:authorize access="isAuthenticated()">
@@ -51,6 +53,12 @@ Movie Date : ${movie.movieDate}
 				</security:authorize>
 			</p>
 			
+=======
+			<p>
+				<a href="${appName}review/add?id=${movie.id}"
+					class="w3-button w3-black"><i class="fa fa-th"></i>Add review </a>
+			</p>
+>>>>>>> 7844516c5229a34997a3caa171499363ec597a9d
 		</div>
 
 	</div>
