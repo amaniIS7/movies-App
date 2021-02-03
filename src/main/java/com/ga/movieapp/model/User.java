@@ -32,6 +32,8 @@ public class User {
 	@OneToMany(mappedBy="user")
 	private Set<Review> reviews;
 	
+	@OneToMany(mappedBy="user")
+	private Set<Movie> movies;
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -120,6 +122,14 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Set<Movie> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(Set<Movie> movies) {
+		this.movies = movies;
 	}
 
 }

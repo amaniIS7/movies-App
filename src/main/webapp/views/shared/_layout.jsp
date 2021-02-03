@@ -41,7 +41,7 @@
 
 		<a href="${appName}">Home</a>
 
-		<a href="${appName}movie/add">Add Movie</a>
+		<a href="${appName}movie/add?id=<security:authentication property="principal.id" />">Add Movie</a>
 		<a href="${appName}movie/index">Movie</a>
 
 		<a href="${appName}actor/add">Add Actor</a>

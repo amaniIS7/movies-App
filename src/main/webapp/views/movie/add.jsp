@@ -42,6 +42,8 @@ img {
 	
 	</br> </br> </br> </br>
 	
+	<input name="user" type="hidden" value="${user.id}">	
+	<security:authentication property="principal.id" />
 	<input type="hidden" name="${_csrf.parameterName}"
 		value="${_csrf.token}" />
 	<button type="submit">Submit</button>
