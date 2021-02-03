@@ -10,7 +10,7 @@
 </c:forEach>
 
 <div class="w3-container w3-card w3-white w3-round w3-margin">
-	<br> <img src="../images/cover.jpg" alt="Avatar"
+	<br> <img src="../images/avatar.png" alt="Avatar"
 		class="w3-left w3-circle w3-margin-right" style="width: 100px; height: 100px">
 	<h4>${user.firstName} ${user.lastName}<br>
 	${user.emailAddress}
