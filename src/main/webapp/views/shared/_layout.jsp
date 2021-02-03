@@ -13,56 +13,80 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
-<!-- CSS only -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="../css/myStyles.css">
-<link rel="stylesheet" href="css/myStyles.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<h2>${Welcome}</h2>
+
+	<div id="shell">
+		<div id="header">
 
 
-	<security:authorize access="isAuthenticated()">
+			<div class="w3-bar w3-white w3-card" id="myNavbar">
+				<a href="${appName}" class="w3-bar-item w3-button w3-wide">MOVIE
+					WORLD</a>
+				<!-- Right-sided navbar links -->
 
-		<a href="${appName}">Home</a>
+				<div class="w3-right w3-hide-small">
+					<security:authorize access="!isAuthenticated()">
+						<a href="${appName}" class="w3-bar-item w3-button">HOME</a>
+						<a href="${appName}movie/index" class="w3-bar-item w3-button"><i
+							class="fa fa-user"></i> MOVIE</a>
+						<a href="${appName}actor/index" class="w3-bar-item w3-button"><i
+							class="fa fa-th"></i> ACTOR</a>
+						<a href="${appName}login" class="w3-bar-item w3-button"><i
+							class="fa fa-usd"></i> SIGN IN</a>
+						<a href="${appName}user/registration"
+							class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>
+							SIGN UP</a>
+					</security:authorize>
+					<security:authorize access="isAuthenticated()">
+						<a href="${appName}" class="w3-bar-item w3-button">HOME</a>
+						<a
+							href="${appName}movie/add?id=<security:authentication property="principal.id"/>"
+							class="w3-bar-item w3-button"><i class="fa fa-th"></i> ADD
+							MOVIE</a>
+						<a href="${appName}movie/index" class="w3-bar-item w3-button"><i
+							class="fa fa-user"></i> MOVIE</a>
+						<a href="${appName}actor/add" class="w3-bar-item w3-button"><i
+							class="fa fa-th"></i> ADD ACTOR</a>
+						<a href="${appName}actor/index" class="w3-bar-item w3-button"><i
+							class="fa fa-th"></i> ACTOR</a>
+						<a
+							href="${appName}user/profile?id=<security:authentication property="principal.id"/>"
+							class="w3-bar-item w3-button"><i class="fa fa-th"></i>
+							WELCOME <security:authentication property="principal.username"/></a>
+						<a href="${appName}logout" class="w3-bar-item w3-button"><i
+							class="fa fa-th"></i>LOGOUT</a>
+							
+					</security:authorize>
+				</div>
+				<!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-		<a href="${appName}movie/add">Add Movie</a>
-		<a href="${appName}movie/index">Movie</a>
+			</div>
 
-		<a href="${appName}actor/add">Add Actor</a>
-		<a href="${appName}actor/index">Actor</a>
-
-		<div style="text-align: right; float: right;">
-
-			<a
-				href="${appName}user/profile?id=<security:authentication property="principal.id" />">Hi:
-				<security:authentication property="principal.username" />
-
-			</a> <a href="${appName}logout">Logout</a>
 		</div>
-	</security:authorize>
+		<br>
 
 
-	<security:authorize access="!isAuthenticated()">
-		<a href="${appName}">Home</a>
-
-		<a href="${appName}movie/index">Movie</a>
-
-		<a href="${appName}actor/index">Actor</a>
-
-		<div style="text-align: right; float: right;">
-
-			<a href="${appName}login">Login</a> <a
-				href="${appName}user/registration">Create New Account</a>
-		</div>
-
-	</security:authorize>
-	<hr>
+<!-- 		<div id="footer">
+			<footer class="w3-center w3-black w3-padding-64">
+				<div class="w3-xlarge w3-section">
+					<i class="fa fa-facebook-official w3-hover-opacity"></i> <i
+						class="fa fa-twitter w3-hover-opacity"></i> <i
+						class="fa fa-linkedin w3-hover-opacity"></i>
+				</div>
+				<p>&copy; 2021 Movie World, LLC. All Rights Reserved. Designed
+					by EARTH GROUP</p>
+			</footer>
+		</div> -->
+	</div>
+	<!-- Footer -->
 
 	<c:if test="${message != null}">
 
@@ -73,9 +97,11 @@
 		%>
 	</c:if>
 
+
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript">
-		$('.fade').slideUp(4000);
+		$('.fade').slideUp(5000);
 	</script>
 </body>
 </html>
+

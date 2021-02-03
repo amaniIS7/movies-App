@@ -16,7 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ga.movieapp.dao.ActorDao;
 import com.ga.movieapp.dao.MovieDao;
 import com.ga.movieapp.dao.ReviewDao;
+import com.ga.movieapp.dao.UserDao;
 import com.ga.movieapp.model.Movie;
+import com.ga.movieapp.model.User;
 
 @Controller
 public class MovieController {
@@ -33,28 +35,53 @@ public class MovieController {
 	@Autowired
 	HttpServletRequest request;
 
-	// HTTP GET REQUEST - Movie Add
+//	// HTTP GET REQUEST - Movie Add
+//	@GetMapping("/movie/add")
+//	public ModelAndView addMovie() {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("movie/add");
+//		
+//		
+//		HomeController hc = new HomeController();
+//		hc.setAppName(mv, env);
+//
+//		var actor = actordao.findAll();
+//		mv.addObject("actors", actor);
+//		
+//		return mv;
+//	}
+	
+	@Autowired
+	private UserDao userDao;
+
 	@GetMapping("/movie/add")
-	public ModelAndView addMovie() {
+	public ModelAndView addMovie(@RequestParam int id) {
+		System.out.println("addMovie id : "+ id);
+		
+		User user = userDao.findById(id);
+		System.out.println("addMovie user email : "+ user.getEmailAddress());
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("movie/add");
-		
+		mv.addObject("user", user);
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-
+		
 		var actor = actordao.findAll();
 		mv.addObject("actors", actor);
-		
+
 		return mv;
 	}
-	
+
 	@Autowired
 	private MovieDao dao;
 	
 	// HTTP POST REQUEST - Movie Add
 	@PostMapping("/movie/add")
 	public String  addMovie(Movie movie) {
+		System.out.println("POST addMovie id : "+ movie.getUser().getId());
+
 //		HttpSession session = request.getSession();
 //		if (!movie.getName().equals("") && !movie.getDescription().equals("") && movie.getActors() != null) {
 			dao.save(movie);
@@ -68,6 +95,7 @@ public class MovieController {
 //		}
 
 	}
+
 	
 	// HTTP GET REQUEST - Movie Index
 	@GetMapping("/movie/index")
@@ -96,8 +124,8 @@ public class MovieController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
-//		var it = actordao.findAll();
-//		mv.addObject("actors", it);
+		var it = actordao.findAll();
+		mv.addObject("actors", it);
 		
 		
 		return mv;
@@ -130,6 +158,5 @@ public class MovieController {
 		return mv;
 		
 	}
-
 
 }

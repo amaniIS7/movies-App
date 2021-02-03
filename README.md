@@ -1,5 +1,5 @@
 # MovieApp
-## abut
+## about
 ### unsolved problems 
 ### dependencies
 ### Tech
@@ -10,8 +10,6 @@
 * java script
 * MySQL
 * AWS Deployment 
-
-
 
 ### User Story 
 [here](/readme/userStory.md)

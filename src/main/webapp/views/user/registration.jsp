@@ -1,38 +1,46 @@
 <jsp:include page="../shared/_layout.jsp" />
 
+<div class="w3-container w3-light-grey" style="padding: 100px 500px"
+	id="contact">
+	<h3 class="w3-center"><b>SIGN UP</b></h3>
+	<p class="w3-center w3-large">Lets get in touch. sign up to our website:</p>
+	<div style="margin-top: 48px">
 
-<form action="${appName}user/registration" method="post">
+		<form action="${appName}user/registration" method="post">
+			<p>
+				<input class="w3-input w3-border" type="text"
+					placeholder="First name" required="" name="firstName">
+			</p>
+			<p>
+				<input class="w3-input w3-border" type="text"
+					placeholder="Last name" required="" name="lastName">
+			</p>
+			<p>
+				<input class="w3-input w3-border" type="email"
+					placeholder="Email Address" required="" name="emailAddress">
+			</p>
 
-	<div class="form-group">
-	<label> First Name </label>
-	<input name="firstName" type="text" class="form-control">
-	</div>
-	
-	<div class="form-group">
-	<label> Last Name </label>
-	<input name="lastName" type="text" class="form-control">
-	</div>
-	
-	<div class="form-group">
-	<label> Email Address </label>
-	<input name="emailAddress" type="email" class="form-control">
-	</div>
-	
-	<div class="form-group">
-	<label> Password </label>
-	<input name="password" type="password" class="form-control">
-	</div>
-	
-	<div class="form-group">
-		<label>Select Role</label>
-		<select name="userRole" class="form-control">
-			<option value="ROLE_ADMIN">Admin</option>
-			<option value="ROLE_USER">User</option>
-		</select>
-	</div>
-	
-	<br>
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<button type="submit" class="btn btn-primary">Submit</button>
+			<p>
+				<input class="w3-input w3-border" type="password"
+					placeholder="Password" required="" name="password">
+			</p>
+			<p>
+				<select class="w3-input w3-border" name="userRole">
+					<option value="ROLE_ADMIN"><b>ADMIN</b></option>
+					<option value="ROLE_USER"><b>USER</b></option>
+				</select>
+			</p>
 
-</form>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+
+			<p>
+				<button class="w3-button w3-black" type="submit">
+					<i class="fa fa-paper-plane"></i> SIGN UP
+				</button>
+			</p>
+
+		</form>
+
+	</div>
+</div>
