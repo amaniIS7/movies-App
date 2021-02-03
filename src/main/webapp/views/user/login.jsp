@@ -3,24 +3,32 @@
 <b>${message}</b>
 <br>
 
-<form class="form1" action="${appName}login" method="post">
- <h4 class="sign">Sign in</h4>
-            <p>Welcome to our Moive website.</p> 
-	  <label>  
-	<input  name="username"  class="input" type="email"  placeholder="Email Address">    
-	  <div class="line-box">          
-             <div class="line"></div>        
-              </div>    
-            </label> 
-	 <label>     
-            <input  name="password" class="input" type="password"  placeholder="Password">        
-              <div class="line-box">          
-                <div class="line"></div>        
+<div class="w3-container w3-light-grey" style="padding: 100px 500px"
+	id="contact">
+	<h3 class="w3-center"><b>SIGN UP</b></h3>
+	<p class="w3-center w3-large">You already have account? sign in to our website:</p>
+	<div style="margin-top: 48px">
 
-              </div>    
+		<form action="${appName}login" method="post">
+			<p>
+				<input class="w3-input w3-border" type="email"
+					placeholder="Email Address" required="" name="username">
+			</p>
 
-            </label>   
-<br>
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<button type="submit">Sign in</button>
- </form> 
+			<p>
+				<input class="w3-input w3-border" type="password"
+					placeholder="Password" required="" name="password">
+			</p>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+
+			<p>
+				<button class="w3-button w3-black" type="submit">
+					<i class="fa fa-paper-plane"></i> SIGN IN
+				</button>
+			</p>
+
+		</form>
+
+	</div>
+</div>

@@ -1,55 +1,46 @@
 <jsp:include page="../shared/_layout.jsp" />
- 
-          <form  class="form1"  action="${appName}user/registration" method="post" >
-             
-            <h4 class="sign">Sign up</h4>
-            <p>Please fill in this form to create an account.</p> 
-               <label>     
-              <input name="firstName" type="text" class="input" placeholder="First name" >               
-                 <div class="line-box">          
-             <div class="line">
-              </div>        
-              </div>    
-            </label>  
-      <label>     
-       <input  name="lastName"  class="input" type="text"  placeholder="Last name">
-                 
-                 <div class="line-box">          
-             <div class="line">
-              </div>        
-              </div>    
-            </label> 
-                     <label>     
-            <input  name="emailAddress"  class="input" type="email"  placeholder="Email Address">              
-                 <div class="line-box">          
 
-             <div class="line">
-              </div>        
-              </div>    
-            </label>     
-                
-            <label>     
-            <input  name="password" class="input" type="password"  placeholder="Password">        
-              <div class="line-box">          
-                <div class="line"></div>        
+<div class="w3-container w3-light-grey" style="padding: 100px 500px"
+	id="contact">
+	<h3 class="w3-center"><b>SIGN UP</b></h3>
+	<p class="w3-center w3-large">Lets get in touch. sign up to our website:</p>
+	<div style="margin-top: 48px">
 
-              </div>    
+		<form action="${appName}user/registration" method="post">
+			<p>
+				<input class="w3-input w3-border" type="text"
+					placeholder="First name" required="" name="firstName">
+			</p>
+			<p>
+				<input class="w3-input w3-border" type="text"
+					placeholder="Last name" required="" name="lastName">
+			</p>
+			<p>
+				<input class="w3-input w3-border" type="email"
+					placeholder="Email Address" required="" name="emailAddress">
+			</p>
 
-            </label>     
-            <label>     
-		<select  class ="input"name="userRole">
-			<option value="ROLE_ADMIN"><b>Admin</b></option>
-			<option value="ROLE_USER"><b>User</b></option>
-        </select>
-              <div class="line-box">        
+			<p>
+				<input class="w3-input w3-border" type="password"
+					placeholder="Password" required="" name="password">
+			</p>
+			<p>
+				<select class="w3-input w3-border" name="userRole">
+					<option value="ROLE_ADMIN"><b>ADMIN</b></option>
+					<option value="ROLE_USER"><b>USER</b></option>
+				</select>
+			</p>
 
-                <div class="line"></div>      
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 
-              </div>    
+			<p>
+				<button class="w3-button w3-black" type="submit">
+					<i class="fa fa-paper-plane"></i> SIGN UP
+				</button>
+			</p>
 
-            </label>   
-            
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-               <button type="submit">Sign Up</button>
-          </form> 
-      
+		</form>
+
+	</div>
+</div>

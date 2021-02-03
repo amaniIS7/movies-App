@@ -1,35 +1,42 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
-
-<form class="form1" action="${appName}movie/add" method="post">
-	<h4 class="sign">Edit Movies info</h4>
-	<label> <input name="name" type="text" class="input" placeholder="Movie's Name" value="${movie.name}">
-		<div class="line-box">
-			<div class="line"></div>
-		</div>
-	</label> <label> <input name="description" type="text" class="input"
-		placeholder="Description about the movie" value="${movie.description}">
-		<div class="line-box">
-			<div class="line"></div>
-		</div>
-	</label> <label> <input name="movieDate" type="date" class="input"
-		placeholder="Release year" value="${movie.movieDate}">
-		<div class="line-box">
-			<div class="line"></div>
-		</div>
-	</label> <label> <select name="actors" multiple="multiple" class="input">
+<div class="w3-container w3-light-grey" style="padding: 100px 500px"
+	id="contact">
+	<h3 class="w3-center"><b>EDIT MOVIE</b></h3>
+	<div style="margin-top: 48px">
+		<form action="${appName}movie/add" method="post">
+			<p>
+				<input class="w3-input w3-border" type="text"
+					placeholder="Movie's Name" required="" name="name" value="${movie.name}">
+			</p>
+			<p>
+				<input class="w3-input w3-border" type="text"
+					placeholder="Description about the movie" required="" name="description" value="${movie.description}">
+			</p>
+			<p>
+				<input class="w3-input w3-border" type="date"
+					placeholder="Release year" required="" name="movieDate" value="${movie.movieDate}">
+			</p>
+			
+			<p>
+			<select name="actors" class="w3-input w3-border">
 			<c:forEach items="${actors}" var="actor">
 				<option value="${actor.id}">${actor.name}</option>
 			</c:forEach>
 	</select>
-		<div class="line-box">
-
-			<div class="line"></div>
-		</div>
-	</label>
-
-	<input name="id" type="hidden" value="${movie.id}">
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<button type="submit">Submit</button>
-
-</form>
+			</p>
+			
+						<input name="user" type="hidden" value="${user.id}">	
+	<security:authentication property="principal.id" />
+			
+				<input name="id" type="hidden" value="${movie.id}">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+			<p>
+				<button class="w3-button w3-black" type="submit">
+					<i class="fa fa-paper-plane"></i> SUBMIT
+				</button>
+			</p>
+		</form>
+	</div>
+</div>
