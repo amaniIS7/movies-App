@@ -25,10 +25,8 @@
 }
 </style>
 
-<div>Movie Reviews</div>
+<div><b>Movie Reviews</b></div>
 <table>
-	<td>reviews</td>
-	<td>rating</td>
 
 	<c:forEach items="${reviews}" var="review">
 		<c:if test="${review.movie.id == movie.id}">
