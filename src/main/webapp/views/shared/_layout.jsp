@@ -60,9 +60,10 @@
 						<a
 							href="${appName}user/profile?id=<security:authentication property="principal.id"/>"
 							class="w3-bar-item w3-button"><i class="fa fa-th"></i>
-							WELCOME <security:authentication property="principal.username" /></a>
+							WELCOME <security:authentication property="principal.username"/></a>
 						<a href="${appName}logout" class="w3-bar-item w3-button"><i
-							class="fa fa-th"></i> LOGOUT</a>
+							class="fa fa-th"></i>LOGOUT</a>
+
 							
 					</security:authorize>
 				</div>
@@ -72,19 +73,6 @@
 
 		</div>
 		<br>
-
-
-<!-- 		<div id="footer">
-			<footer class="w3-center w3-black w3-padding-64">
-				<div class="w3-xlarge w3-section">
-					<i class="fa fa-facebook-official w3-hover-opacity"></i> <i
-						class="fa fa-twitter w3-hover-opacity"></i> <i
-						class="fa fa-linkedin w3-hover-opacity"></i>
-				</div>
-				<p>&copy; 2021 Movie World, LLC. All Rights Reserved. Designed
-					by EARTH GROUP</p>
-			</footer>
-		</div> -->
 	</div>
 	<!-- Footer -->
 
