@@ -4,7 +4,7 @@
 
 <div class="w3-container" style="padding: 128px 16px" id="team">
 	<h3 class="w3-center">MOVIES</h3>
-	<p class="w3-center w3-large">You can ...</p>
+	<p class="w3-center w3-large">Dive Into The Movies World ^^ </p>
 	<div class="w3-row-padding w3-grayscale" style="margin-top: 64px">
 
 		<c:forEach items="${movies}" var="movie">

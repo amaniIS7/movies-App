@@ -1,3 +1,5 @@
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
 
@@ -22,9 +24,10 @@ Movie Date : ${movie.movieDate}
 
 <div class="w3-container w3-light-grey" style="padding: 128px 16px">
 	<div class="w3-row-padding">
-		<div class="w3-col m6" style="width: 400px; height: 300px; ">
-			<img class="w3-image w3-round-large" src="../images/movie1.jpg" width="200"
-				alt="poster">
+		<div class="w3-col m6" style="width: 400px; height: 300px;">
+			<img class="w3-image w3-round-large" src="../images/movie1.jpg"
+				width="200" alt="poster">
+
 		</div>
 		<div class="w3-col m6">
 			<h3>${movie.name}</h3>
@@ -40,10 +43,22 @@ Movie Date : ${movie.movieDate}
 
 			<jsp:include page="../review/index.jsp" />
 
+<<<<<<< HEAD
+			
+				<p>
+				<security:authorize access="isAuthenticated()">
+					<a href="${appName}review/add?id=${movie.id}"
+						class="w3-button w3-black"><i class="fa fa-th"></i>Add review
+					</a>
+				</security:authorize>
+			</p>
+			
+=======
 			<p>
 				<a href="${appName}review/add?id=${movie.id}"
 					class="w3-button w3-black"><i class="fa fa-th"></i>Add review </a>
 			</p>
+>>>>>>> 7844516c5229a34997a3caa171499363ec597a9d
 		</div>
 
 	</div>
