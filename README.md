@@ -17,7 +17,8 @@ Movie App uses a number of technologies:
 * AWS Deployment.
 * Maven.
 
-### dependencies
+### Dependencies
+To run the app you have to install and add the following dependencies:
 * Spring Framework Boot.
 * MySQL Connector.
 * Tomcat Server.
@@ -31,15 +32,15 @@ Movie App uses a number of technologies:
 ### User Story 
 You can see the user stories for our app [here](/readme/userStory.md)
 
-### wireframes
+### Wireframes
 You can see the wireframes pages [here](/readme/wireframes.md)
 
 ### Planning Documentation
 [here](https://docs.google.com/document/d/1QtjyVzi34M7S42N78QWBw4Xyjvx5la_o/edit#heading=h.gjdgxs)
  
 ### Future work:
-* storing the images into the database.
-* adding live scroller to the home page.
+* Storing the images into the database.
+* Adding images scroller to the home page.
 
 ### Authors 
 * Alaa Alzahrani.
@@ -48,6 +49,5 @@ You can see the wireframes pages [here](/readme/wireframes.md)
 * Sarah ibrahim.
 
 ### Resources
- * [style](https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup)
+ * [The used Boostrap and Template in our website](https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup)
  * [MDN documentation](https://developer.mozilla.org/en-US/)
- * [wireframes](https://pidoco.com/)
