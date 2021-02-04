@@ -48,7 +48,7 @@
 					<security:authorize access="isAuthenticated()">
 						<a href="${appName}" class="w3-bar-item w3-button">HOME</a>
 						<a
-							href="${appName}movie/add?id=<security:authentication property="principal.id"/>"
+							href="${appName}movie/add"
 							class="w3-bar-item w3-button"><i class="fa fa-th"></i> ADD
 							MOVIE</a>
 						<a href="${appName}movie/index" class="w3-bar-item w3-button"><i

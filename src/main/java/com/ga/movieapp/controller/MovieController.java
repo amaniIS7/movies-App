@@ -55,21 +55,18 @@ public class MovieController {
 	private UserDao userDao;
 
 	@GetMapping("/movie/add")
-	public ModelAndView addMovie(@RequestParam int id) {
-		System.out.println("addMovie id : "+ id);
-		
-		User user = userDao.findById(id);
-		System.out.println("addMovie user email : "+ user.getEmailAddress());
-
+	public ModelAndView addMovie() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("movie/add");
-		mv.addObject("user", user);
-		
+
+
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
+
 		
 		var actor = actordao.findAll();
 		mv.addObject("actors", actor);
+		
 
 		return mv;
 	}
@@ -80,10 +77,7 @@ public class MovieController {
 	// HTTP POST REQUEST - Movie Add
 	@PostMapping("/movie/add")
 	public String  addMovie(Movie movie) {
-		System.out.println("POST addMovie id : "+ movie.getUser().getId());
 
-//		HttpSession session = request.getSession();
-//		if (!movie.getName().equals("") && !movie.getDescription().equals("") && movie.getActors() != null) {
 			dao.save(movie);
 //			session.setAttribute("message", "your adding successfully");
 //			session.setAttribute("class", "alert alert-primary");

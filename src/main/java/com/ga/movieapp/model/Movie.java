@@ -43,10 +43,6 @@ public class Movie {
 	@OneToMany(mappedBy="movie")
 	private Set<Review> reviews;
 
-	@ManyToOne
-	@JoinColumn(name = "fk_userId")
-	private User user;
-
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createAt;
@@ -125,14 +121,6 @@ public class Movie {
 
 	public void setReviews(Set<Review> reviews) {
 		this.reviews = reviews;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	
