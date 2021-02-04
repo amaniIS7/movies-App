@@ -4,40 +4,50 @@ The app uses Spring security for authenticationn and authorization. and there's 
 for more insight about our design of the database see this diagram.
 # ![](../readme/ERDiagram.jpg)
 
+The project deployed on [AWS](http://mercuryplatform-env.eba-dj3p2fjp.us-east-2.elasticbeanstalk.com/)
 
 ### Tech
-* Java 
-* Spring boot
-* Tomcat server 
-* Css , bootstrap
-* Java script
-* MySQL 
-* AWS Deployment 
+Movie App uses a number of technologies:
+* Java.
+* Spring boot.
+* Tomcat server.
+* CSS , Bootstrap.
+* Javascript.
+* MySQL.
+* AWS Deployment.
+* Maven.
 
 ### dependencies
+* Spring Framework Boot.
+* MySQL Connector.
+* Tomcat Server.
+* JPA.
+* JSTL.
+
+
+### Installaton 
+
 
 ### User Story 
-[here](/readme/userStory.md)
+You can see the user stories for our app [here](/readme/userStory.md)
 
 ### wireframes
-[here](/readme/wireframes.md)
+You can see the wireframes pages [here](/readme/wireframes.md)
 
 ### Planning Documentation
 [here](https://docs.google.com/document/d/1QtjyVzi34M7S42N78QWBw4Xyjvx5la_o/edit#heading=h.gjdgxs)
+ 
+### Future work:
+* storing the images into the database.
+* adding live scroller to the home page.
 
-###authors 
-* Alaa Alzahrani 
-* Sarah ibrahim 
-* Rasha Alkaabi
-* Amani almutairi
+### Authors 
+* Alaa Alzahrani.
+* Amani almutairi.
+* Rasha Alkaabi.
+* Sarah ibrahim.
 
-### resources
+### Resources
  * [style](https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup)
  * [MDN documentation](https://developer.mozilla.org/en-US/)
  * [wireframes](https://pidoco.com/)
-
-### unsolved problems 
- 
-### future work:
-* storing the images into the database.
-* adding live scroller to the home page.
