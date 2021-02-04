@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 
 <div class="w3-container" style="padding: 128px 16px" id="team">
@@ -20,14 +21,18 @@
 									href="${appName}actor/edit?id=${actor.id}">Edit</a>
 							</button>
 						</p>
-						<p>
-							<button class="w3-button w3-light-grey w3-block">
-								<i class="fa fa-envelope"></i> <a
-									href="${appName}actor/delete?id=${actor.id}">Delete</a>
+						<security:authorize access="hasRole('ADMIN')">
+
+							<p>
+								<button class="w3-button w3-light-grey w3-block">
+									<i class="fa fa-envelope"></i> <a
+										href="${appName}actor/delete?id=${actor.id}">Delete</a>
 
 
-							</button>
-						</p>
+								</button>
+							</p>
+						</security:authorize>
+
 						<%-- 						<p>
 							<button class="w3-button w3-light-grey w3-block">
 								<i class="fa fa-envelope"></i> 
