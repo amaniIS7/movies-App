@@ -10,29 +10,24 @@
 		<c:forEach items="${movies}" var="movie">
 
 			<div class="w3-col l3 m6 w3-margin-bottom">
-
-
-
-				<img src="../images/movie1.jpg" alt="poster" style="width: 100%">
-				<div class="w3-container">
-					<!-- 					<div class="container">
- -->
-					<h3>${movie.name}</h3>
-					<p class="w3-opacity">${movie.movieDate}</p>
-					<p>${movie.description}</p>
-					<p>
-						<button class="w3-button w3-light-grey w3-block">
-							<i class="fa fa-envelope"></i> <a
-								href="${appName}movie/edit?id=${movie.id}">Edit</a>
-						</button>
-					</p>
-					<p>
-						<button class="w3-button w3-light-grey w3-block">
-							<i class="fa fa-envelope"></i> <a
-								href="${appName}movie/detail?id=${movie.id}">See detail</a>
-						</button>
-					</p>
-
+				<div class="w3-card">
+					<img src="../images/cover.jpg" alt="poster" style="width: 100%">
+					<div class="w3-container">
+						<h3>${movie.name}</h3>
+						<p class="w3-opacity">${movie.movieDate}</p>
+						<p>${movie.description}</p>
+						<p>
+							<button class="w3-button w3-light-grey w3-block">
+								<i class="fa fa-envelope"></i> <a
+									href="${appName}movie/edit?id=${movie.id}">Edit</a>
+							</button>
+						</p>
+						<p>
+							<button class="w3-button w3-light-grey w3-block">
+								<i class="fa fa-envelope"></i> <a
+									href="${appName}movie/detail?id=${movie.id}">See detail</a>
+							</button>
+						</p>
 					<security:authorize access="hasRole('ADMIN')">
 
 						<p>
@@ -42,10 +37,24 @@
 							</button>
 						</p>
 					</security:authorize>
+
+					</div>
 				</div>
 			</div>
-	</div>
-	</c:forEach>
+		</c:forEach>
 
+	</div>
 </div>
+
+<!-- Footer -->
+<div id="footer">
+	<footer class="w3-center w3-black w3-padding-64">
+		<div class="w3-xlarge w3-section">
+			<i class="fa fa-facebook-official w3-hover-opacity"></i> <i
+				class="fa fa-twitter w3-hover-opacity"></i> <i
+				class="fa fa-linkedin w3-hover-opacity"></i>
+		</div>
+		<p>&copy; 2021 Movie World, LLC. All Rights Reserved. Designed by
+			EARTH GROUP</p>
+	</footer>
 </div>

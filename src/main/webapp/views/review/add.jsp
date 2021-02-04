@@ -16,7 +16,6 @@
 
 			</p>
 
-
 			<input id="ratingNum" name="rating" type="hidden">
 			<div class="rating">
 				<div id="star1" class="clip-star"></div>
@@ -26,8 +25,6 @@
 				<div id="star5" class="clip-star"></div>
 			</div>
 
-
-
 			<input name="movie" type="hidden" value="${movie.id}"> <input
 				type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
@@ -36,9 +33,7 @@
 					<i class="fa fa-paper-plane"></i> submit
 				</button>
 			</p>
-
 		</form>
-
 	</div>
 </div>
 
