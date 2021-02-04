@@ -1,12 +1,61 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
-
+			
+			
 <div class="w3-container" style="padding: 128px 16px" id="team">
 	<h3 class="w3-center">MOVIES</h3>
-	<p class="w3-center w3-large">Dive Into The Movies World ^^ </p>
+	<p class="w3-center w3-large">Dive With us Into The Movies World ^^ </p>
 	<div class="w3-row-padding w3-grayscale" style="margin-top: 64px">
 
+			<div class="w3-col l3 m6 w3-margin-bottom">
+				<div class="w3-card">
+					<img src="../images/movie1.jpg" alt="poster" style="width: 100%">
+					<div class="w3-container">
+						<h3>Enola Holmes</h3>
+						<p class="w3-opacity">2020-01-01</p>
+						<p>While searching fir her missung mother, tntrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runawar losd.</p>
+
+					</div>
+				</div>
+			</div>
+		
+					<div class="w3-col l3 m6 w3-margin-bottom">
+				<div class="w3-card">
+					<img src="../images/movie2.png" alt="poster" style="width: 100%">
+					<div class="w3-container">
+						<h3>BIRD BOX</h3>
+						<p class="w3-opacity">2020-01-01</p>
+						<p>While searching fir her missung mother, tntrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runawar losd.</p>
+
+					</div>
+				</div>
+			</div>
+			
+						<div class="w3-col l3 m6 w3-margin-bottom">
+				<div class="w3-card">
+					<img src="../images/movie3.jpg" alt="poster" style="width: 100%">
+					<div class="w3-container">
+						<h3>The Marksman</h3>
+						<p class="w3-opacity">2020-01-01</p>
+						<p>While searching fir her missung mother, tntrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runawar losd.</p>
+
+					</div>
+				</div>
+			</div>
+			
+						<div class="w3-col l3 m6 w3-margin-bottom">
+				<div class="w3-card">
+					<img src="../images/movie4.jpg" alt="poster" style="width: 100%">
+					<div class="w3-container">
+						<h3>Earwing ang the witch</h3>
+						<p class="w3-opacity">2020-01-01</p>
+						<p>While searching fir her missung mother, tntrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runawar losd.</p>
+
+					</div>
+				</div>
+			</div>
+			
 		<c:forEach items="${movies}" var="movie">
 
 			<div class="w3-col l3 m6 w3-margin-bottom">
