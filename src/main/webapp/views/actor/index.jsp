@@ -50,7 +50,7 @@
 				<div class="w3-card">
 					<img src="../images/cover.jpg" alt="poster" style="width: 100%">
 					<div class="w3-container">
-						<h3>Angelina Jolie</h3>
+						<h3>${actor.name}</h3>
 						<p>
 							<button class="w3-button w3-light-grey w3-block">
 								<i class="fa fa-envelope"></i> <a
