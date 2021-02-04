@@ -44,15 +44,6 @@
 			</div>
 		</div>
 		
-		<div class="w3-col l3 m6 w3-margin-bottom">
-			<div class="w3-card">
-				<img src="../images/actor1.jpg" alt="poster" style="width: 100%">
-				<div class="w3-container">
-					<h3>Tom cruise</h3>
-				</div>
-			</div>
-		</div>
-		
 		<c:forEach items="${actors}" var="actor">
 
 			<div class="w3-col l3 m6 w3-margin-bottom">
